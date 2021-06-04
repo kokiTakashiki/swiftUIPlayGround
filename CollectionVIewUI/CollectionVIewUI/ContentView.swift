@@ -15,7 +15,7 @@ struct ContentView: View {
                 LazyVGrid(columns: columns, alignment: .center, spacing: 0) {
                     ForEach((1...50), id: \.self) { num in
                         ZStack {
-                            Rectangle().foregroundColor(.green)
+                            Rectangle().foregroundColor(.white)
                                 .aspectRatio(1,contentMode: .fill)
                                 .border(Color.black)
                             Text("\(num)")
