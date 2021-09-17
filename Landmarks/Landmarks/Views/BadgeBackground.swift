@@ -22,7 +22,7 @@ struct BadgeBackground: View {
                         y: height * (0.20 + HexagonParameters.adjustment)
                     )
                 )
-                
+
                 HexagonParameters.segments.forEach { segment in
                     path.addLine(
                         to: CGPoint(
@@ -30,19 +30,21 @@ struct BadgeBackground: View {
                             y: height * segment.line.y
                         )
                     )
-                    
+
                     path.addQuadCurve(
                         to: CGPoint(
                             x: width * segment.curve.x + xOffset,
-                            y: height * segment.curve.y),
+                            y: height * segment.curve.y
+                        ),
                         control: CGPoint(
                             x: width * segment.control.x + xOffset,
-                            y: height * segment.control.y)
+                            y: height * segment.control.y
+                        )
                     )
                 }
             }
             .fill(LinearGradient(
-                gradient: Gradient(colors: [Self.gradientStart, Self.gradientStart]),
+                gradient: Gradient(colors: [Self.gradientStart, Self.gradientEnd]),
                 startPoint: UnitPoint(x: 0.5, y: 0),
                 endPoint: UnitPoint(x: 0.5, y: 0.6)
             ))
