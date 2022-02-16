@@ -8,10 +8,9 @@
 import Foundation
 
 class GithubFetcher {
-    private let urlLink = "https://api.github.com/users/kokiTakashiki"
-
+    private let urlLink = "https://api.github.com"    
     func repos(completion: @escaping ([Repo]) -> Void) {
-        let reputationsUrl = urlLink + "/repos"
+        let reputationsUrl = urlLink + "/users/kokiTakashiki/repos"
         URLSession.shared.dataTask(with: URL(string: reputationsUrl)!) { (data, response, error) in
             guard let data = data else { return }
             let decoder: JSONDecoder = JSONDecoder()
@@ -27,15 +26,16 @@ class GithubFetcher {
         }.resume()
     }
     
-    func languages(repoName: String, completion: @escaping ([Languages]) -> Void) {
-            let reputationsUrl = urlLink + "/\(repoName)/languages"
+    func languages(repoName: String, completion: @escaping (Languages) -> Void) {
+            let reputationsUrl = urlLink + "/repos/kokiTakashiki/\(repoName)/languages"
             URLSession.shared.dataTask(with: URL(string: reputationsUrl)!) { (data, response, error) in
                 guard let data = data else { return }
                 let decoder: JSONDecoder = JSONDecoder()
                 do {
-                    let searchedResultData = try decoder.decode([Languages].self, from: data)
+                    let searchedResultData = try decoder.decode(Languages.self, from: data)
                     DispatchQueue.main.async {
-                        completion(searchedResultData.reversed())
+                        print(searchedResultData)
+                        completion(searchedResultData)//.reversed())
                     }
                 } catch {
                     print("json convert failed in JSONDecoder. ")

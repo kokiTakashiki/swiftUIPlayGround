@@ -14,7 +14,7 @@ struct RepoDetailView: View {
     @ObservedObject private var viewModel = ReposListViewModel()
     func reload() {
         self.viewModel.selectedRepoLanguagesData(repoName: repoData.name)
-        print(repoData.name)
+        print("repoData \(repoData.name)")
     }
     
     var body: some View {
@@ -56,11 +56,33 @@ struct RepoDetailView: View {
                                          iconName: "person.text.rectangle.fill",
                                          colorType: .blue)
                     Divider()
-                    Text(repoData.description ?? "not_found")
-                    Divider()
+                    if let description = repoData.description {
+                        Text(description)
+                    } else {
+                        Text("not_found")
+                    }
+                    
                 }
-
                 
+                Group {
+                    Divider()
+                    Text("language")
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .onAppear { reload() }
+                    Spacer()
+                    
+                    if viewModel.languagesData.count == 0 {
+                        Text("not_found")
+                    } else {
+                        ForEach(RepoDetailView.languagesKeys(viewModel.languagesData), id: \.self) { data in
+                            Divider()
+                            LanguageLabelView(labelText: data,
+                                              iconName: "circle.fill",
+                                              colorType: data)
+                        }
+                    }
+                }
             }
             .padding()
             if self.viewModel.isShowIndicator {
@@ -69,11 +91,24 @@ struct RepoDetailView: View {
         }
         .navigationBarTitle("details", displayMode: .inline)
     }
+    
+    private static func languagesKeys(_ target: [Languages]) -> [String] {
+        var result = [String]()
+        for i in target {
+            let keys = i.keys
+            result = result + keys
+        }
+        return result
+    }
 }
 
 struct RepoDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let mock = mock()
-        RepoDetailView(repoData: mock.repos[0])
+        ForEach(["en_US", "ja_JP"], id: \.self) { id in
+            RepoDetailView(repoData: mock.repos[0])
+                .environment(\.locale, .init(identifier: id))
+                //.environment(\.colorScheme, .dark)
+        }
     }
 }

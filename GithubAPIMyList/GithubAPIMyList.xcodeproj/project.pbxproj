@@ -165,6 +165,7 @@
 			children = (
 				9A5CE89227BC8AA7008D75A4 /* ContentView.swift */,
 				9A5CE8C827BCC3B3008D75A4 /* ReposListView */,
+				9A5CE8E327BD3CC1008D75A4 /* LangengelistView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +225,13 @@
 				9A5CE8DB27BCFEFC008D75A4 /* Color+Extensions.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		9A5CE8E327BD3CC1008D75A4 /* LangengelistView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LangengelistView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

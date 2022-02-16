@@ -30,8 +30,11 @@ struct LanguageLabelView: View {
             }
         }.padding(.bottom, 6.0)
     }
-    
-    static func selectColor(type: String) -> Color {
+}
+
+// MARK: Private
+extension LanguageLabelView {
+    private static func selectColor(type: String) -> Color {
         switch type {
         case "C":
             return .githubC

@@ -13,3 +13,6 @@
 // RepoListRowView
 "not_found" = "Not yet set";
 "details" = "Details";
+
+// RepoDetailView
+"language" = "Languages";

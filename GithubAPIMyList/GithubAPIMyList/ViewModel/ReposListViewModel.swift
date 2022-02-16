@@ -24,7 +24,7 @@ class ReposListViewModel: ObservableObject {
     func selectedRepoLanguagesData(repoName: String) {
         self.fetcher.languages(repoName: repoName) { (languages) in
             //sleep(1)
-            self.languagesData = languages
+            self.languagesData = [languages]
             self.isShowIndicator = false
         }
     }

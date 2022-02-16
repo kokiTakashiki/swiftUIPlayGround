@@ -14,3 +14,6 @@
 "not_found" = "未設定";
 "details" = "詳細";
 
+// RepoDetailView
+"language" = "使用言語";
+
