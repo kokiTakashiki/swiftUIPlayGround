@@ -18,6 +18,9 @@
 		9A5CE8C127BCAEB1008D75A4 /* GithubFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8C027BCAEB1008D75A4 /* GithubFetcher.swift */; };
 		9A5CE8C327BCB40E008D75A4 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8C227BCB40E008D75A4 /* Languages.swift */; };
 		9A5CE8C527BCB5BE008D75A4 /* ReposListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8C427BCB5BE008D75A4 /* ReposListViewModel.swift */; };
+		9A5CE8C727BCB7A8008D75A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8C627BCB7A8008D75A4 /* AppDelegate.swift */; };
+		9A5CE8CA27BCC3D2008D75A4 /* ReposListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8C927BCC3D2008D75A4 /* ReposListView.swift */; };
+		9A5CE8CE27BCC5A0008D75A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CE8D027BCC5A0008D75A4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,10 @@
 		9A5CE8C027BCAEB1008D75A4 /* GithubFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubFetcher.swift; sourceTree = "<group>"; };
 		9A5CE8C227BCB40E008D75A4 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		9A5CE8C427BCB5BE008D75A4 /* ReposListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewModel.swift; sourceTree = "<group>"; };
+		9A5CE8C627BCB7A8008D75A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A5CE8C927BCC3D2008D75A4 /* ReposListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListView.swift; sourceTree = "<group>"; };
+		9A5CE8CF27BCC5A0008D75A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9A5CE8D127BCC5A2008D75A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				9A5CE89027BC8AA7008D75A4 /* GithubAPIMyListApp.swift */,
-				9A5CE89227BC8AA7008D75A4 /* ContentView.swift */,
+				9A5CE8C627BCB7A8008D75A4 /* AppDelegate.swift */,
 				9A5CE8BA27BC8C9E008D75A4 /* Views */,
 				9A5CE8BB27BC8CA8008D75A4 /* ViewModel */,
 				9A5CE8BC27BC8CBB008D75A4 /* API */,
-				9A5CE89427BC8AA8008D75A4 /* Assets.xcassets */,
+				9A5CE8CB27BCC542008D75A4 /* Resources */,
 				9A5CE89627BC8AA8008D75A4 /* Preview Content */,
 			);
 			path = GithubAPIMyList;
@@ -141,6 +148,8 @@
 		9A5CE8BA27BC8C9E008D75A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9A5CE89227BC8AA7008D75A4 /* ContentView.swift */,
+				9A5CE8C827BCC3B3008D75A4 /* ReposListView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +178,23 @@
 				9A5CE8C227BCB40E008D75A4 /* Languages.swift */,
 			);
 			path = Entitiy;
+			sourceTree = "<group>";
+		};
+		9A5CE8C827BCC3B3008D75A4 /* ReposListView */ = {
+			isa = PBXGroup;
+			children = (
+				9A5CE8C927BCC3D2008D75A4 /* ReposListView.swift */,
+			);
+			path = ReposListView;
+			sourceTree = "<group>";
+		};
+		9A5CE8CB27BCC542008D75A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A5CE89427BC8AA8008D75A4 /* Assets.xcassets */,
+				9A5CE8D027BCC5A0008D75A4 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 9A5CE88427BC8AA7008D75A4;
 			productRefGroup = 9A5CE88E27BC8AA7008D75A4 /* Products */;
@@ -276,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5CE89827BC8AA8008D75A4 /* Preview Assets.xcassets in Resources */,
+				9A5CE8CE27BCC5A0008D75A4 /* Localizable.strings in Resources */,
 				9A5CE89527BC8AA8008D75A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +333,9 @@
 				9A5CE89327BC8AA7008D75A4 /* ContentView.swift in Sources */,
 				9A5CE8C527BCB5BE008D75A4 /* ReposListViewModel.swift in Sources */,
 				9A5CE8C127BCAEB1008D75A4 /* GithubFetcher.swift in Sources */,
+				9A5CE8C727BCB7A8008D75A4 /* AppDelegate.swift in Sources */,
 				9A5CE8C327BCB40E008D75A4 /* Languages.swift in Sources */,
+				9A5CE8CA27BCC3D2008D75A4 /* ReposListView.swift in Sources */,
 				9A5CE89127BC8AA7008D75A4 /* GithubAPIMyListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +371,18 @@
 			targetProxy = 9A5CE8A827BC8AA8008D75A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A5CE8D027BCC5A0008D75A4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A5CE8CF27BCC5A0008D75A4 /* ja */,
+				9A5CE8D127BCC5A2008D75A4 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9A5CE8AF27BC8AA8008D75A4 /* Debug */ = {
