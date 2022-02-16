@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  GithubAPIMyList
+
+  Created by 武田孝騎 on 2022/02/16.
+  
+*/
+
+// ReposListView
+"title" = "リポジトリリスト";
+"loading" = "ロード中...";
+
+// RepoListRowView
+"not_found" = "未設定";
+"details" = "詳細";
+
+// RepoDetailView
+"language" = "使用言語";
+
