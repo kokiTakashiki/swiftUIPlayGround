@@ -6,4 +6,10 @@
   
 */
 
+// ReposListView
 "title" = "Repositories List";
+"loading" = "Loading...";
+
+// RepoListRowView
+"not_found" = "Not yet set";
+"details" = "Details";

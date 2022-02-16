@@ -6,4 +6,11 @@
   
 */
 
+// ReposListView
 "title" = "リポジトリリスト";
+"loading" = "ロード中...";
+
+// RepoListRowView
+"not_found" = "未設定";
+"details" = "詳細";
+

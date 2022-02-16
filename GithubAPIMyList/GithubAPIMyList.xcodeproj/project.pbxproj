@@ -21,6 +21,13 @@
 		9A5CE8C727BCB7A8008D75A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8C627BCB7A8008D75A4 /* AppDelegate.swift */; };
 		9A5CE8CA27BCC3D2008D75A4 /* ReposListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8C927BCC3D2008D75A4 /* ReposListView.swift */; };
 		9A5CE8CE27BCC5A0008D75A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CE8D027BCC5A0008D75A4 /* Localizable.strings */; };
+		9A5CE8D327BCCC20008D75A4 /* RepoListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8D227BCCC20008D75A4 /* RepoListRowView.swift */; };
+		9A5CE8D527BCCD53008D75A4 /* mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8D427BCCD53008D75A4 /* mock.swift */; };
+		9A5CE8D927BCFC07008D75A4 /* RepoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8D827BCFC07008D75A4 /* RepoDetailView.swift */; };
+		9A5CE8DC27BCFEFC008D75A4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8DB27BCFEFC008D75A4 /* Color+Extensions.swift */; };
+		9A5CE8DE27BD002C008D75A4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CE8DD27BD002C008D75A4 /* Color.xcassets */; };
+		9A5CE8E027BD2D5B008D75A4 /* RepoDetailLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8DF27BD2D5B008D75A4 /* RepoDetailLabelView.swift */; };
+		9A5CE8E227BD36FB008D75A4 /* LanguageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8E127BD36FB008D75A4 /* LanguageLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,13 @@
 		9A5CE8C927BCC3D2008D75A4 /* ReposListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListView.swift; sourceTree = "<group>"; };
 		9A5CE8CF27BCC5A0008D75A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9A5CE8D127BCC5A2008D75A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9A5CE8D227BCCC20008D75A4 /* RepoListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListRowView.swift; sourceTree = "<group>"; };
+		9A5CE8D427BCCD53008D75A4 /* mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mock.swift; sourceTree = "<group>"; };
+		9A5CE8D827BCFC07008D75A4 /* RepoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailView.swift; sourceTree = "<group>"; };
+		9A5CE8DB27BCFEFC008D75A4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		9A5CE8DD27BD002C008D75A4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		9A5CE8DF27BD2D5B008D75A4 /* RepoDetailLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailLabelView.swift; sourceTree = "<group>"; };
+		9A5CE8E127BD36FB008D75A4 /* LanguageLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +128,7 @@
 				9A5CE8BA27BC8C9E008D75A4 /* Views */,
 				9A5CE8BB27BC8CA8008D75A4 /* ViewModel */,
 				9A5CE8BC27BC8CBB008D75A4 /* API */,
+				9A5CE8DA27BCFED7008D75A4 /* Extentions */,
 				9A5CE8CB27BCC542008D75A4 /* Resources */,
 				9A5CE89627BC8AA8008D75A4 /* Preview Content */,
 			);
@@ -167,6 +182,7 @@
 			children = (
 				9A5CE8C027BCAEB1008D75A4 /* GithubFetcher.swift */,
 				9A5CE8BD27BC8CC7008D75A4 /* Entitiy */,
+				9A5CE8D427BCCD53008D75A4 /* mock.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -184,6 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				9A5CE8C927BCC3D2008D75A4 /* ReposListView.swift */,
+				9A5CE8D227BCCC20008D75A4 /* RepoListRowView.swift */,
+				9A5CE8D827BCFC07008D75A4 /* RepoDetailView.swift */,
+				9A5CE8DF27BD2D5B008D75A4 /* RepoDetailLabelView.swift */,
+				9A5CE8E127BD36FB008D75A4 /* LanguageLabelView.swift */,
 			);
 			path = ReposListView;
 			sourceTree = "<group>";
@@ -193,8 +213,17 @@
 			children = (
 				9A5CE89427BC8AA8008D75A4 /* Assets.xcassets */,
 				9A5CE8D027BCC5A0008D75A4 /* Localizable.strings */,
+				9A5CE8DD27BD002C008D75A4 /* Color.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9A5CE8DA27BCFED7008D75A4 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				9A5CE8DB27BCFEFC008D75A4 /* Color+Extensions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A5CE89827BC8AA8008D75A4 /* Preview Assets.xcassets in Resources */,
+				9A5CE8DE27BD002C008D75A4 /* Color.xcassets in Resources */,
 				9A5CE8CE27BCC5A0008D75A4 /* Localizable.strings in Resources */,
 				9A5CE89527BC8AA8008D75A4 /* Assets.xcassets in Resources */,
 			);
@@ -333,10 +363,16 @@
 				9A5CE89327BC8AA7008D75A4 /* ContentView.swift in Sources */,
 				9A5CE8C527BCB5BE008D75A4 /* ReposListViewModel.swift in Sources */,
 				9A5CE8C127BCAEB1008D75A4 /* GithubFetcher.swift in Sources */,
+				9A5CE8D927BCFC07008D75A4 /* RepoDetailView.swift in Sources */,
 				9A5CE8C727BCB7A8008D75A4 /* AppDelegate.swift in Sources */,
 				9A5CE8C327BCB40E008D75A4 /* Languages.swift in Sources */,
 				9A5CE8CA27BCC3D2008D75A4 /* ReposListView.swift in Sources */,
+				9A5CE8D527BCCD53008D75A4 /* mock.swift in Sources */,
+				9A5CE8D327BCCC20008D75A4 /* RepoListRowView.swift in Sources */,
+				9A5CE8E027BD2D5B008D75A4 /* RepoDetailLabelView.swift in Sources */,
 				9A5CE89127BC8AA7008D75A4 /* GithubAPIMyListApp.swift in Sources */,
+				9A5CE8DC27BCFEFC008D75A4 /* Color+Extensions.swift in Sources */,
+				9A5CE8E227BD36FB008D75A4 /* LanguageLabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -491,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -517,6 +553,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -546,6 +583,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -15,12 +15,12 @@ struct ReposListView: View {
             VStack {
                 ZStack {
                     List(viewModel.reposData) { repo in
-                        //NavigationLink(destination: //RoomDetailView(roomData: room)) {
-                            //RoomRowView(roomData: room)
-                        //}
+                        NavigationLink(destination: RepoDetailView(repoData: repo)) {
+                            RepoListRowView(repoData: repo)
+                        }
                     }
                     if self.viewModel.isShowIndicator {
-                        AnyView(ProgressView("Loading..."))
+                        AnyView(ProgressView("loading"))
                     }
                 }
             }
@@ -34,6 +34,7 @@ struct ReposListView_Previews: PreviewProvider {
         ForEach(["en_US", "ja_JP"], id: \.self) { id in
             ReposListView()
                 .environment(\.locale, .init(identifier: id))
-            }
+                //.environment(\.colorScheme, .dark)
+        }
     }
 }
