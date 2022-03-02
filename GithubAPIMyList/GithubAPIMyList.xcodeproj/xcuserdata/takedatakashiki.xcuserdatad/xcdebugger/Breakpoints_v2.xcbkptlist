@@ -14,9 +14,9 @@
             filePath = "GithubAPIMyList/API/GithubFetcher.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "languages(repoName:completion:)"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "languages(repoName:completion:test:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,9 +30,9 @@
             filePath = "GithubAPIMyList/API/GithubFetcher.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "languages(repoName:completion:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "languages(repoName:completion:test:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

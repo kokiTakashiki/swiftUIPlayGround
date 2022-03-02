@@ -29,7 +29,26 @@ class GithubFetcher {
     func languages(repoName: String, completion: @escaping (Languages) -> Void) {
             let reputationsUrl = urlLink + "/repos/kokiTakashiki/\(repoName)/languages"
             URLSession.shared.dataTask(with: URL(string: reputationsUrl)!) { (data, response, error) in
-                guard let data = data else { return }
+                
+                if let error = error {
+                    print("request failure: \(error)")
+                    let nsError = error as NSError
+                    switch nsError.code {
+                        case NSURLErrorTimedOut:
+                            //failure(.networkError(error))
+                            print("")
+                        default:
+                            // 標準の処理
+                            //failure(.networkError(error))
+                        print("")
+                    }
+                    return
+                }
+                
+                guard let data = data else {
+                    //failure(.unknown(error: "data nil"))
+                    return
+                }
                 let decoder: JSONDecoder = JSONDecoder()
                 do {
                     let searchedResultData = try decoder.decode(Languages.self, from: data)
