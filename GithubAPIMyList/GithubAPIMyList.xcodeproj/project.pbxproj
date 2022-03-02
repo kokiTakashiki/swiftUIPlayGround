@@ -132,7 +132,7 @@
 				9A5CE8BA27BC8C9E008D75A4 /* Views */,
 				9A5CE8BB27BC8CA8008D75A4 /* ViewModel */,
 				9A5CE8BC27BC8CBB008D75A4 /* API */,
-				9A5CE8DA27BCFED7008D75A4 /* Extentions */,
+				9A5CE8DA27BCFED7008D75A4 /* Extensions */,
 				9A5CE8CB27BCC542008D75A4 /* Resources */,
 				9A5CE89627BC8AA8008D75A4 /* Preview Content */,
 			);
@@ -224,13 +224,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9A5CE8DA27BCFED7008D75A4 /* Extentions */ = {
+		9A5CE8DA27BCFED7008D75A4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9A5CE8DB27BCFEFC008D75A4 /* Color+Extensions.swift */,
 				9A5CE8E627BE27AC008D75A4 /* UIViewController+Extension.swift */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9A5CE8E327BD3CC1008D75A4 /* LangengelistView */ = {

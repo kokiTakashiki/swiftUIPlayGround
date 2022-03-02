@@ -20,8 +20,6 @@ enum APIError: Error{
             return "JSONパースエラー"
         case .unknown:
             return "不明なエラー"
-        default:
-            return "検索エラー"
         }
     }
 
