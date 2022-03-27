@@ -28,6 +28,8 @@
 		9A5CE8DE27BD002C008D75A4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A5CE8DD27BD002C008D75A4 /* Color.xcassets */; };
 		9A5CE8E027BD2D5B008D75A4 /* RepoDetailLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8DF27BD2D5B008D75A4 /* RepoDetailLabelView.swift */; };
 		9A5CE8E227BD36FB008D75A4 /* LanguageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8E127BD36FB008D75A4 /* LanguageLabelView.swift */; };
+		9A5CE8E527BE2776008D75A4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8E427BE2776008D75A4 /* APIError.swift */; };
+		9A5CE8E727BE27AC008D75A4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8E627BE27AC008D75A4 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		9A5CE8DD27BD002C008D75A4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		9A5CE8DF27BD2D5B008D75A4 /* RepoDetailLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailLabelView.swift; sourceTree = "<group>"; };
 		9A5CE8E127BD36FB008D75A4 /* LanguageLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageLabelView.swift; sourceTree = "<group>"; };
+		9A5CE8E427BE2776008D75A4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		9A5CE8E627BE27AC008D75A4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +132,7 @@
 				9A5CE8BA27BC8C9E008D75A4 /* Views */,
 				9A5CE8BB27BC8CA8008D75A4 /* ViewModel */,
 				9A5CE8BC27BC8CBB008D75A4 /* API */,
-				9A5CE8DA27BCFED7008D75A4 /* Extentions */,
+				9A5CE8DA27BCFED7008D75A4 /* Extensions */,
 				9A5CE8CB27BCC542008D75A4 /* Resources */,
 				9A5CE89627BC8AA8008D75A4 /* Preview Content */,
 			);
@@ -181,6 +185,7 @@
 		9A5CE8BC27BC8CBB008D75A4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				9A5CE8E427BE2776008D75A4 /* APIError.swift */,
 				9A5CE8C027BCAEB1008D75A4 /* GithubFetcher.swift */,
 				9A5CE8BD27BC8CC7008D75A4 /* Entitiy */,
 				9A5CE8D427BCCD53008D75A4 /* mock.swift */,
@@ -219,12 +224,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		9A5CE8DA27BCFED7008D75A4 /* Extentions */ = {
+		9A5CE8DA27BCFED7008D75A4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9A5CE8DB27BCFEFC008D75A4 /* Color+Extensions.swift */,
+				9A5CE8E627BE27AC008D75A4 /* UIViewController+Extension.swift */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9A5CE8E327BD3CC1008D75A4 /* LangengelistView */ = {
@@ -367,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5CE8E727BE27AC008D75A4 /* UIViewController+Extension.swift in Sources */,
 				9A5CE8BF27BCA8F6008D75A4 /* Repos.swift in Sources */,
 				9A5CE89327BC8AA7008D75A4 /* ContentView.swift in Sources */,
 				9A5CE8C527BCB5BE008D75A4 /* ReposListViewModel.swift in Sources */,
@@ -375,6 +382,7 @@
 				9A5CE8C727BCB7A8008D75A4 /* AppDelegate.swift in Sources */,
 				9A5CE8C327BCB40E008D75A4 /* Languages.swift in Sources */,
 				9A5CE8CA27BCC3D2008D75A4 /* ReposListView.swift in Sources */,
+				9A5CE8E527BE2776008D75A4 /* APIError.swift in Sources */,
 				9A5CE8D527BCCD53008D75A4 /* mock.swift in Sources */,
 				9A5CE8D327BCCC20008D75A4 /* RepoListRowView.swift in Sources */,
 				9A5CE8E027BD2D5B008D75A4 /* RepoDetailLabelView.swift in Sources */,
