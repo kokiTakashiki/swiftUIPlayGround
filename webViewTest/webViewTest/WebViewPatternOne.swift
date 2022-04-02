@@ -1,5 +1,5 @@
 //
-//  WebView.swift
+//  WebViewPatternOne.swift
 //  webViewTest
 //
 //  Created by 武田孝騎 on 2022/03/31.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import WebKit
 
-struct WebView: UIViewRepresentable {
+struct WebViewPatternOne: UIViewRepresentable {
     let url: URL
     @Binding var showLoading: Bool
     
@@ -25,8 +25,8 @@ struct WebView: UIViewRepresentable {
         
     }
     
-    func makeCoordinator() -> WebViewCoordinator {
-        WebViewCoordinator(didStart: {
+    func makeCoordinator() -> WebViewCoordinatorPatternOne {
+        WebViewCoordinatorPatternOne(didStart: {
             showLoading = true
         }, didFinish: {
             showLoading = false
@@ -34,7 +34,7 @@ struct WebView: UIViewRepresentable {
     }
 }
 
-final class WebViewCoordinator: NSObject, WKNavigationDelegate {
+final class WebViewCoordinatorPatternOne: NSObject, WKNavigationDelegate {
     
     var didStart: () -> Void
     var didFinish: () -> Void

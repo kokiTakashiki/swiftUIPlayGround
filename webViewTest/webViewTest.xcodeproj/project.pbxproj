@@ -14,7 +14,13 @@
 		9AA75A2627F0665E009DCD81 /* webViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A2527F0665E009DCD81 /* webViewTestTests.swift */; };
 		9AA75A3027F0665E009DCD81 /* webViewTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A2F27F0665E009DCD81 /* webViewTestUITests.swift */; };
 		9AA75A3227F0665E009DCD81 /* webViewTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A3127F0665E009DCD81 /* webViewTestUITestsLaunchTests.swift */; };
-		9AA75A3F27F4D160009DCD81 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A3E27F4D160009DCD81 /* WebView.swift */; };
+		9AA75A3F27F4D160009DCD81 /* WebViewPatternOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A3E27F4D160009DCD81 /* WebViewPatternOne.swift */; };
+		9AA75A4127F7F118009DCD81 /* WebViewPatternTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A4027F7F118009DCD81 /* WebViewPatternTwo.swift */; };
+		9AA75A4327F7F3A1009DCD81 /* WebViewPatternTwoTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A4227F7F3A1009DCD81 /* WebViewPatternTwoTestView.swift */; };
+		9AA75A4527F7F768009DCD81 /* View+halfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A4427F7F768009DCD81 /* View+halfModal.swift */; };
+		9AA75A4727F7F90F009DCD81 /* HalfModalSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A4627F7F90F009DCD81 /* HalfModalSheetViewController.swift */; };
+		9AA75A4927F7FCF9009DCD81 /* Binding+whereValue==Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A4827F7FCF9009DCD81 /* Binding+whereValue==Bool.swift */; };
+		9AA75A4B27F8AA96009DCD81 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A4A27F8AA96009DCD81 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +51,13 @@
 		9AA75A2B27F0665E009DCD81 /* webViewTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = webViewTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA75A2F27F0665E009DCD81 /* webViewTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewTestUITests.swift; sourceTree = "<group>"; };
 		9AA75A3127F0665E009DCD81 /* webViewTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9AA75A3E27F4D160009DCD81 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9AA75A3E27F4D160009DCD81 /* WebViewPatternOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPatternOne.swift; sourceTree = "<group>"; };
+		9AA75A4027F7F118009DCD81 /* WebViewPatternTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPatternTwo.swift; sourceTree = "<group>"; };
+		9AA75A4227F7F3A1009DCD81 /* WebViewPatternTwoTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPatternTwoTestView.swift; sourceTree = "<group>"; };
+		9AA75A4427F7F768009DCD81 /* View+halfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+halfModal.swift"; sourceTree = "<group>"; };
+		9AA75A4627F7F90F009DCD81 /* HalfModalSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalSheetViewController.swift; sourceTree = "<group>"; };
+		9AA75A4827F7FCF9009DCD81 /* Binding+whereValue==Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+whereValue==Bool.swift"; sourceTree = "<group>"; };
+		9AA75A4A27F8AA96009DCD81 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +112,8 @@
 				9AA75A1627F0665D009DCD81 /* ContentView.swift */,
 				9AA75A1827F0665E009DCD81 /* Assets.xcassets */,
 				9AA75A1A27F0665E009DCD81 /* Preview Content */,
-				9AA75A3E27F4D160009DCD81 /* WebView.swift */,
+				9AA75A3E27F4D160009DCD81 /* WebViewPatternOne.swift */,
+				9AA75A4C27F8AFAE009DCD81 /* WebViewPatternTwo */,
 			);
 			path = webViewTest;
 			sourceTree = "<group>";
@@ -128,6 +141,19 @@
 				9AA75A3127F0665E009DCD81 /* webViewTestUITestsLaunchTests.swift */,
 			);
 			path = webViewTestUITests;
+			sourceTree = "<group>";
+		};
+		9AA75A4C27F8AFAE009DCD81 /* WebViewPatternTwo */ = {
+			isa = PBXGroup;
+			children = (
+				9AA75A4027F7F118009DCD81 /* WebViewPatternTwo.swift */,
+				9AA75A4227F7F3A1009DCD81 /* WebViewPatternTwoTestView.swift */,
+				9AA75A4A27F8AA96009DCD81 /* HeaderView.swift */,
+				9AA75A4627F7F90F009DCD81 /* HalfModalSheetViewController.swift */,
+				9AA75A4427F7F768009DCD81 /* View+halfModal.swift */,
+				9AA75A4827F7FCF9009DCD81 /* Binding+whereValue==Bool.swift */,
+			);
+			path = WebViewPatternTwo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +286,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AA75A3F27F4D160009DCD81 /* WebView.swift in Sources */,
+				9AA75A3F27F4D160009DCD81 /* WebViewPatternOne.swift in Sources */,
+				9AA75A4327F7F3A1009DCD81 /* WebViewPatternTwoTestView.swift in Sources */,
+				9AA75A4B27F8AA96009DCD81 /* HeaderView.swift in Sources */,
 				9AA75A1727F0665D009DCD81 /* ContentView.swift in Sources */,
+				9AA75A4527F7F768009DCD81 /* View+halfModal.swift in Sources */,
 				9AA75A1527F0665D009DCD81 /* webViewTestApp.swift in Sources */,
+				9AA75A4727F7F90F009DCD81 /* HalfModalSheetViewController.swift in Sources */,
+				9AA75A4927F7FCF9009DCD81 /* Binding+whereValue==Bool.swift in Sources */,
+				9AA75A4127F7F118009DCD81 /* WebViewPatternTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
