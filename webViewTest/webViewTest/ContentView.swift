@@ -7,10 +7,21 @@
 
 import SwiftUI
 
+extension View {
+    func toAnyView() -> AnyView {
+        AnyView(self)
+    }
+}
+
 struct ContentView: View {
+    
+    @State private var showLoading: Bool = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            WebView(url: URL(string: "https:www.google.com")!, showLoading: $showLoading)
+                .overlay(showLoading ? ProgressView("Loading ...").toAnyView(): EmptyView().toAnyView())
+        }
     }
 }
 

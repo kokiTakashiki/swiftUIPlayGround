@@ -14,6 +14,7 @@
 		9AA75A2627F0665E009DCD81 /* webViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A2527F0665E009DCD81 /* webViewTestTests.swift */; };
 		9AA75A3027F0665E009DCD81 /* webViewTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A2F27F0665E009DCD81 /* webViewTestUITests.swift */; };
 		9AA75A3227F0665E009DCD81 /* webViewTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A3127F0665E009DCD81 /* webViewTestUITestsLaunchTests.swift */; };
+		9AA75A3F27F4D160009DCD81 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA75A3E27F4D160009DCD81 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9AA75A2B27F0665E009DCD81 /* webViewTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = webViewTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA75A2F27F0665E009DCD81 /* webViewTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewTestUITests.swift; sourceTree = "<group>"; };
 		9AA75A3127F0665E009DCD81 /* webViewTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webViewTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9AA75A3E27F4D160009DCD81 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				9AA75A1627F0665D009DCD81 /* ContentView.swift */,
 				9AA75A1827F0665E009DCD81 /* Assets.xcassets */,
 				9AA75A1A27F0665E009DCD81 /* Preview Content */,
+				9AA75A3E27F4D160009DCD81 /* WebView.swift */,
 			);
 			path = webViewTest;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA75A3F27F4D160009DCD81 /* WebView.swift in Sources */,
 				9AA75A1727F0665D009DCD81 /* ContentView.swift in Sources */,
 				9AA75A1527F0665D009DCD81 /* webViewTestApp.swift in Sources */,
 			);
