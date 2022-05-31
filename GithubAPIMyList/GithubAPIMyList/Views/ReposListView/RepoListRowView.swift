@@ -30,14 +30,18 @@ struct RepoListRowView: View {
 struct RepoListRowView_Previews: PreviewProvider {
     static var previews: some View {
         let mock = mock()
-        ForEach(["en_US", "ja_JP"], id: \.self) { id in
-            Group {
-                RepoListRowView(repoData: mock.repos[0])
-                    .environment(\.locale, .init(identifier: id))
-                RepoListRowView(repoData: mock.repos[2])
-                    .environment(\.locale, .init(identifier: id))
+        ForEach([ColorScheme.light, ColorScheme.dark], id: \.self) { colorScheme in
+            ForEach(["en_US", "ja_JP"], id: \.self) { id in
+                Group {
+                    RepoListRowView(repoData: mock.repos[0])
+                        .environment(\.locale, .init(identifier: id))
+                    RepoListRowView(repoData: mock.repos[2])
+                        .environment(\.locale, .init(identifier: id))
+                }
+                .preferredColorScheme(colorScheme)
+                .previewLayout(.fixed(width: 300, height: 100))
             }
-            .previewLayout(.fixed(width: 300, height: 100))
         }
+        
     }
 }

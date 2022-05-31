@@ -105,10 +105,16 @@ struct RepoDetailView: View {
 struct RepoDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let mock = mock()
-        ForEach(["en_US", "ja_JP"], id: \.self) { id in
-            RepoDetailView(repoData: mock.repos[0])
-                .environment(\.locale, .init(identifier: id))
-                //.environment(\.colorScheme, .dark)
+        ForEach([ColorScheme.light, ColorScheme.dark], id: \.self) { colorScheme in
+            ForEach(["iPhone 12", "iPod touch (7th generation)"], id: \.self) { deviceName in
+                ForEach(["en_US", "ja_JP"], id: \.self) { id in
+                    RepoDetailView(repoData: mock.repos[0])
+                        .environment(\.locale, .init(identifier: id))
+                        .preferredColorScheme(colorScheme)
+                        .previewDevice(PreviewDevice(rawValue: deviceName))
+                        .previewDisplayName(deviceName)
+                }
+            }
         }
     }
 }

@@ -31,10 +31,16 @@ struct ReposListView: View {
 
 struct ReposListView_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["en_US", "ja_JP"], id: \.self) { id in
-            ReposListView()
-                .environment(\.locale, .init(identifier: id))
-                //.environment(\.colorScheme, .dark)
+        ForEach([ColorScheme.light, ColorScheme.dark], id: \.self) { colorScheme in
+            ForEach(["iPhone 12", "iPod touch (7th generation)"], id: \.self) { deviceName in
+                ForEach(["en_US", "ja_JP"], id: \.self) { id in
+                    ReposListView()
+                        .environment(\.locale, .init(identifier: id))
+                        .preferredColorScheme(colorScheme)
+                        .previewDevice(PreviewDevice(rawValue: deviceName))
+                        .previewDisplayName(deviceName)
+                }
+            }
         }
     }
 }
