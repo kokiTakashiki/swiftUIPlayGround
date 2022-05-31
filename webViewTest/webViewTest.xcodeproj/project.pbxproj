@@ -110,10 +110,10 @@
 			children = (
 				9AA75A1427F0665D009DCD81 /* webViewTestApp.swift */,
 				9AA75A1627F0665D009DCD81 /* ContentView.swift */,
-				9AA75A1827F0665E009DCD81 /* Assets.xcassets */,
-				9AA75A1A27F0665E009DCD81 /* Preview Content */,
 				9AA75A3E27F4D160009DCD81 /* WebViewPatternOne.swift */,
 				9AA75A4C27F8AFAE009DCD81 /* WebViewPatternTwo */,
+				9AA75A1827F0665E009DCD81 /* Assets.xcassets */,
+				9AA75A1A27F0665E009DCD81 /* Preview Content */,
 			);
 			path = webViewTest;
 			sourceTree = "<group>";

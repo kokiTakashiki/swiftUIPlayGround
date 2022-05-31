@@ -19,8 +19,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            WebViewPatternOne(url: URL(string: "https:www.google.com")!, showLoading: $showLoading)
-                .overlay(showLoading ? ProgressView("Loading ...").toAnyView(): EmptyView().toAnyView())
+//            WebViewPatternOne(url: URL(string: "https:www.google.com")!, showLoading: $showLoading)
+//                .overlay(showLoading ? ProgressView("Loading ...").toAnyView(): EmptyView().toAnyView())
+            WebViewPatternTwoTestView()
         }
     }
 }
