@@ -18,6 +18,12 @@
 		9A3EBA2228A2093B00D24E74 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3EBA2128A2093B00D24E74 /* FirebaseAnalytics */; };
 		9A3EBA2428A2093B00D24E74 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3EBA2328A2093B00D24E74 /* FirebaseCrashlytics */; };
 		9A3EBA2628A2093B00D24E74 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9A3EBA2528A2093B00D24E74 /* FirebaseMessaging */; };
+		9A3EBA2A28A23F6A00D24E74 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA2928A23F6A00D24E74 /* RootView.swift */; };
+		9A3EBA2C28A23F8300D24E74 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA2B28A23F8300D24E74 /* RootViewModel.swift */; };
+		9A3EBA2E28A23F9F00D24E74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA2D28A23F9F00D24E74 /* HomeView.swift */; };
+		9A3EBA3028A23FB800D24E74 /* PushDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA2F28A23FB800D24E74 /* PushDetailView.swift */; };
+		9A3EBA3228A23FCF00D24E74 /* PushDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA3128A23FCF00D24E74 /* PushDetailViewModel.swift */; };
+		9A3EBA3428A23FEC00D24E74 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA3328A23FEC00D24E74 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,12 @@
 		9A3EBA1028A205CF00D24E74 /* FirebaseCloudMessagingTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCloudMessagingTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9A3EBA1D28A207F100D24E74 /* FirebaseCloudMessagingTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseCloudMessagingTest.entitlements; sourceTree = "<group>"; };
 		9A3EBA1E28A2088100D24E74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9A3EBA2928A23F6A00D24E74 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		9A3EBA2B28A23F8300D24E74 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		9A3EBA2D28A23F9F00D24E74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9A3EBA2F28A23FB800D24E74 /* PushDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDetailView.swift; sourceTree = "<group>"; };
+		9A3EBA3128A23FCF00D24E74 /* PushDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDetailViewModel.swift; sourceTree = "<group>"; };
+		9A3EBA3328A23FEC00D24E74 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,12 @@
 				9A3EBA1D28A207F100D24E74 /* FirebaseCloudMessagingTest.entitlements */,
 				9A3EB9F328A205CD00D24E74 /* FirebaseCloudMessagingTestApp.swift */,
 				9A3EB9F528A205CD00D24E74 /* ContentView.swift */,
+				9A3EBA2928A23F6A00D24E74 /* RootView.swift */,
+				9A3EBA2B28A23F8300D24E74 /* RootViewModel.swift */,
+				9A3EBA2D28A23F9F00D24E74 /* HomeView.swift */,
+				9A3EBA2F28A23FB800D24E74 /* PushDetailView.swift */,
+				9A3EBA3128A23FCF00D24E74 /* PushDetailViewModel.swift */,
+				9A3EBA3328A23FEC00D24E74 /* WebView.swift */,
 				9A3EB9F728A205CE00D24E74 /* Assets.xcassets */,
 				9A3EBA1E28A2088100D24E74 /* GoogleService-Info.plist */,
 				9A3EB9F928A205CE00D24E74 /* Preview Content */,
@@ -277,8 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3EBA3228A23FCF00D24E74 /* PushDetailViewModel.swift in Sources */,
+				9A3EBA3428A23FEC00D24E74 /* WebView.swift in Sources */,
 				9A3EB9F628A205CD00D24E74 /* ContentView.swift in Sources */,
 				9A3EB9F428A205CD00D24E74 /* FirebaseCloudMessagingTestApp.swift in Sources */,
+				9A3EBA2C28A23F8300D24E74 /* RootViewModel.swift in Sources */,
+				9A3EBA3028A23FB800D24E74 /* PushDetailView.swift in Sources */,
+				9A3EBA2E28A23F9F00D24E74 /* HomeView.swift in Sources */,
+				9A3EBA2A28A23F6A00D24E74 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

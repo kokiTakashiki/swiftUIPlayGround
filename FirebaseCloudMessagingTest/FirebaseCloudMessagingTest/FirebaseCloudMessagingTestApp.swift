@@ -58,6 +58,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         print(userInfo)
+        // 通知のペイロードを送る
+        NotificationCenter.default.post(name: Notification.Name("didReceiveRemoteNotification"),
+                                        object: nil,
+                                        userInfo: userInfo)
         completionHandler()
     }
 }
@@ -67,7 +71,9 @@ struct FirebaseCloudMessagingTestApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(RootViewModel())
+                .environmentObject(PushDetailViewModel())
         }
     }
 }
