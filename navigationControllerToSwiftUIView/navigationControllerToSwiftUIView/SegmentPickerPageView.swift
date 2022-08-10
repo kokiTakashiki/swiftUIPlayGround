@@ -1,24 +1,27 @@
 //
-//  ContentView.swift
-//  PageTabViewStyleTest
+//  SegmentPickerPageView.swift
+//  navigationControllerToSwiftUIView
 //
-//  Created by 武田孝騎 on 2022/08/08.
+//  Created by 武田孝騎 on 2022/08/10.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct SegmentPickerPageView: View {
     @State private var selection = 0
     
     var body: some View {
-        ScrollViewReader { scrollView in
-            VStack(spacing: 0) {
-                SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5"], selectedIndex: $selection)
+        VStack {
+            ScrollViewReader { scrollView in
+                SegmentedPickerExample(titles: ["Page1","Page2","Page3"], selectedIndex: $selection)
                 
                 TabView(selection: $selection) {
-                    Text("Page 1")
+//                    PageView(id: 0, proxy: scrollView)
+//                    PageView(id: 1, proxy: scrollView)
+//                    PageView(id: 2, proxy: scrollView)
+                    PageOneView(id: 0, proxy: scrollView)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.red)
+                        .background(Color.green)
                         .tag(0)
                         .onAppear{
                             withAnimation {
@@ -43,24 +46,6 @@ struct ContentView: View {
                                 scrollView.scrollTo(2, anchor: .center)
                             }
                         }
-                    Text("Page 4")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.yellow)
-                        .tag(3)
-                        .onAppear{
-                            withAnimation {
-                                scrollView.scrollTo(3, anchor: .center)
-                            }
-                        }
-                    Text("Page 5")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.orange)
-                        .tag(4)
-                        .onAppear{
-                            withAnimation {
-                                scrollView.scrollTo(4, anchor: .center)
-                            }
-                        }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
@@ -69,8 +54,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SegmentPickerPageView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SegmentPickerPageView()
     }
 }

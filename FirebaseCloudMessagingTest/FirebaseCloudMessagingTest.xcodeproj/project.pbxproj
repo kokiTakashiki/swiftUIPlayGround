@@ -62,6 +62,7 @@
 		9A3EBA2F28A23FB800D24E74 /* PushDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDetailView.swift; sourceTree = "<group>"; };
 		9A3EBA3128A23FCF00D24E74 /* PushDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDetailViewModel.swift; sourceTree = "<group>"; };
 		9A3EBA3328A23FEC00D24E74 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9A3EBA3528A24B5F00D24E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +116,7 @@
 		9A3EB9F228A205CD00D24E74 /* FirebaseCloudMessagingTest */ = {
 			isa = PBXGroup;
 			children = (
+				9A3EBA3528A24B5F00D24E74 /* Info.plist */,
 				9A3EBA1D28A207F100D24E74 /* FirebaseCloudMessagingTest.entitlements */,
 				9A3EB9F328A205CD00D24E74 /* FirebaseCloudMessagingTestApp.swift */,
 				9A3EB9F528A205CD00D24E74 /* ContentView.swift */,
@@ -465,6 +467,7 @@
 				DEVELOPMENT_TEAM = GY636G2259;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FirebaseCloudMessagingTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -495,6 +498,7 @@
 				DEVELOPMENT_TEAM = GY636G2259;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FirebaseCloudMessagingTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

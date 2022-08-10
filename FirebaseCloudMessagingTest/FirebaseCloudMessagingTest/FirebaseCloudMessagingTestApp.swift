@@ -16,14 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         
         UNUserNotificationCenter.current().delegate = self
-
+        
         // 初回起動時、プッシュ通知の許可ダイアログを表示させる
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
             completionHandler: { _, _ in }
         )
-    
+        
         application.registerForRemoteNotifications()
         
         return true
@@ -38,6 +38,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
+    
+//    // サイレントプッシュ通知を処理する
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+//                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        // Print full message.
+//        print(userInfo)
+//
+//        completionHandler(UIBackgroundFetchResult.newData)
+//    }
+//
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Unable to register for remote notifications: \(error.localizedDescription)")
+    }
 }
 
 extension AppDelegate: MessagingDelegate {}
@@ -51,7 +64,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print(userInfo)
         completionHandler([.banner, .badge, .sound])
     }
-
+    
     // 通知センター等でプッシュ通知をタップした場合に呼ばれる
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
@@ -71,9 +84,10 @@ struct FirebaseCloudMessagingTestApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            RootView()
-                .environmentObject(RootViewModel())
-                .environmentObject(PushDetailViewModel())
+            ContentView()
+//            RootView()
+//                .environmentObject(RootViewModel())
+//                .environmentObject(PushDetailViewModel())
         }
     }
 }

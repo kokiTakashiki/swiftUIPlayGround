@@ -22,14 +22,15 @@ struct SegmentedPickerExample: View {
                         selectionAlignment: .bottom,
                         content: { item, isSelected in
                             Text(item)
+                                .font(.system(size: 14, weight: .bold))
                                 .foregroundColor(isSelected ? Color.black : Color.gray )
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 8)
+                                .padding(.horizontal, 18)
+                                .padding(.vertical, 18)
                         },
                         selection: {
                             VStack(spacing: 0) {
                                 Spacer()
-                                Color.black.frame(height: 1)
+                                Color.black.frame(height: 2)
                             }
                         })
                         .onAppear {
@@ -39,7 +40,7 @@ struct SegmentedPickerExample: View {
                 }
                 .padding(.horizontal, 12)
         }
-        .frame(height: 40)
+        .frame(height: 54)
         
     }
 }
@@ -47,6 +48,7 @@ struct SegmentedPickerExample: View {
 struct SegmentedPickerExample_Previews: PreviewProvider {
     @State static var selectedInt = 0
     static var previews: some View {
-        SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5"], selectedIndex: $selectedInt)
+        SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5","Page1","Page2"], selectedIndex: $selectedInt)
+            .previewLayout(.fixed(width: 375, height: 54))
     }
 }
