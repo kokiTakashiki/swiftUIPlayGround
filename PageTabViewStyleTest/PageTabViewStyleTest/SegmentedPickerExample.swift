@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SegmentedPickerExample: View {
     let titles: [String]
-    @Binding var selectedIndex: Int
+    //@Binding var selectedIndex: Int
+    @Binding var selectedIndex: PageIndex
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -17,8 +18,8 @@ struct SegmentedPickerExample: View {
                     SegmentedPicker(
                         titles,
                         selectedIndex: Binding(
-                            get: { selectedIndex },
-                            set: { selectedIndex = $0 }),
+                            get: { selectedIndex.rawValue },
+                            set: { selectedIndex = PageIndex(rawValue: $0) ?? .one }),
                         selectionAlignment: .bottom,
                         content: { item, isSelected in
                             Text(item)
@@ -46,9 +47,10 @@ struct SegmentedPickerExample: View {
 }
 
 struct SegmentedPickerExample_Previews: PreviewProvider {
-    @State static var selectedInt = 0
+    //@State static var selectedInt = 0
+    @State static var selectedIndex: PageIndex = .one
     static var previews: some View {
-        SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5","Page1","Page2"], selectedIndex: $selectedInt)
+        SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5","Page1","Page2"], selectedIndex: $selectedIndex)
             .previewLayout(.fixed(width: 375, height: 54))
     }
 }

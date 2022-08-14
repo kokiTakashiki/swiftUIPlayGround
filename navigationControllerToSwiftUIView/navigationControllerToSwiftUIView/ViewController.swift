@@ -12,23 +12,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         title = "test navigation"
         
-        let vc: UIHostingController = UIHostingController(rootView: SegmentPickerPageView())
-        //let vc = PageOneViewController()
-        self.addChild(vc)
-        self.view.addSubview(vc.view)
-        vc.didMove(toParent: self)
+        let viewController: UIHostingController = UIHostingController(rootView: SegmentPickerPageView())
+        
+        self.addChild(viewController)
+        self.view.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
 
-        vc.view.translatesAutoresizingMaskIntoConstraints = false
-        vc.view.heightAnchor.constraint(equalToConstant: 320).isActive = true
-        vc.view.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 16).isActive = true
-        vc.view.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16).isActive = true
-        vc.view.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        viewController.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        viewController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        viewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        viewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        viewController.view.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
-
-
 }
 

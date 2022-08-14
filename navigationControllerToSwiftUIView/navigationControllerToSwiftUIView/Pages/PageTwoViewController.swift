@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PageTowViewController: UIViewController {
+class PageTwoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
