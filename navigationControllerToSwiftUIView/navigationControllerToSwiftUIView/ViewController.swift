@@ -9,18 +9,19 @@ import UIKit
 import SwiftUI
 
 class ViewController: UIViewController {
+    
+    private let config = Configuration()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "test navigation"
         
-        let viewController: UIHostingController = UIHostingController(rootView: SegmentPickerPageView())
-        
+        let viewController: UIHostingController = UIHostingController(rootView: SegmentPickerPageView(config: config))
+        config.hostingController = viewController
         self.addChild(viewController)
         self.view.addSubview(viewController.view)
         viewController.didMove(toParent: self)
-
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         viewController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
