@@ -19,6 +19,11 @@ class DetailViewController: UIViewController {
         
         self.view.backgroundColor = .white
         title = "test DetailView"
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .lightGray
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
         
         // スクリーンの横縦幅
         let screenWidth:CGFloat = self.view.frame.width

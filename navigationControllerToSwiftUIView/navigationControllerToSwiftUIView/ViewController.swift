@@ -16,6 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         title = "test navigation"
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .lightGray
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
         
         let viewController: UIHostingController = UIHostingController(rootView: SegmentPickerPageView(config: config))
         config.hostingController = viewController
