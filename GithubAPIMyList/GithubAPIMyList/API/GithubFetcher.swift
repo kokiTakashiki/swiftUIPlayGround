@@ -8,7 +8,7 @@
 import Foundation
 
 class GithubFetcher {
-    private let urlLink = "https://api.github.com"    
+    private let urlLink = "https://api.github.com"
     func repos(completion: @escaping ([Repo]) -> Void) {
         let reputationsUrl = urlLink + "/users/kokiTakashiki/repos"
         URLSession.shared.dataTask(with: URL(string: reputationsUrl)!) { (data, response, error) in

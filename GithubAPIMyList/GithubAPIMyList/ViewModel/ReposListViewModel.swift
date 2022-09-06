@@ -5,10 +5,10 @@
 //  Created by 武田孝騎 on 2022/02/16.
 //
 
-import Foundation
+import SwiftUI
 
 class ReposListViewModel: ObservableObject {
-    let fetcher = GithubFetcher()
+    var fetcher = GithubFetcher()
     @Published var reposData: [Repo] = []
     @Published var isShowIndicator = true
     @Published var languagesData: [Languages] = []

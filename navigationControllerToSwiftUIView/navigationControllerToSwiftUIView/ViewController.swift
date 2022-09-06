@@ -11,6 +11,7 @@ import SwiftUI
 class ViewController: UIViewController {
     
     private let config = Configuration()
+    private let model = SegmentPickerPageViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.standardAppearance = appearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
         
-        let viewController: UIHostingController = UIHostingController(rootView: SegmentPickerPageView(config: config))
+        let viewController: UIHostingController = UIHostingController(rootView: SegmentPickerPageView(config: config).environmentObject(model))
         config.hostingController = viewController
         self.addChild(viewController)
         self.view.addSubview(viewController.view)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ReposListView: View {
-    @ObservedObject private var viewModel = ReposListViewModel()
+    @StateObject private var viewModel = ReposListViewModel()
         
     var body: some View {
         NavigationView {
@@ -25,6 +25,9 @@ struct ReposListView: View {
                 }
             }
             .navigationBarTitle(Text("title"))
+            .onReceive(self.viewModel.$isShowIndicator) { item in
+                print("receive")
+            }
         }
     }
 }

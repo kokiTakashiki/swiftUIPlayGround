@@ -11,7 +11,7 @@ struct RepoDetailView: View {
     var repoData: Repo
     
     // Languages用
-    @ObservedObject private var viewModel = ReposListViewModel()
+    @StateObject private var viewModel = ReposListViewModel()
     func reload() {
         self.viewModel.selectedRepoLanguagesData(repoName: repoData.name)
         print("repoData \(repoData.name)")

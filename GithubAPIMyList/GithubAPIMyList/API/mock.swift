@@ -33,4 +33,9 @@ final class mock {
              license: nil
             )
     ]
+    let languages: [Languages]
+    = [
+        ["C":991],
+        ["Swift":992]
+    ]
 }
