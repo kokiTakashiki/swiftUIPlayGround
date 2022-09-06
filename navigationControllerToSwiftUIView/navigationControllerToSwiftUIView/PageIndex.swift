@@ -5,7 +5,12 @@
 //  Created by 武田孝騎 on 2022/08/11.
 //
 
-enum PageIndex: Int {
+import SwiftUI
+
+enum PageIndex: Int, CaseIterable, Identifiable {
+    
+    var id: String { UUID().uuidString }
+    
     case one
     case two
     case three

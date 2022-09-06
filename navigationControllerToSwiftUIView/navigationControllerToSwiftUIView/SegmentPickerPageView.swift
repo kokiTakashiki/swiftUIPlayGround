@@ -14,48 +14,34 @@ class Configuration {
 
 struct SegmentPickerPageView: View {
     //@State private var selection = 0
-    @State private var selectionIndex:PageIndex = .one
+    //@State private var selectionIndex:PageIndex = .one
+    @EnvironmentObject var model:SegmentPickerPageViewModel
     let config:Configuration
     
     var body: some View {
         ScrollViewReader { scrollView in
             VStack(spacing: 5) {
-                SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","Page5","Page6"], selectedIndex: $selectionIndex)
+                SegmentedPickerExample(index: PageIndex.allCases.map { $0 })
+                    .environmentObject(model)
 //                Picker("", selection: $selectionIndex) {
 //                    Text("Page1").tag(PageIndex.one)
 //                    Text("Page2").tag(PageIndex.two)
 //                    Text("Page3").tag(PageIndex.three)
 //                }.pickerStyle(SegmentedPickerStyle())
                 
-                TabView(selection: $selectionIndex) {
+                TabView(selection: $model.state.selectionIndex) {
                     PageView(index: .one,
-                             proxy: scrollView,
-                             config: config, anchor: .center)
+                             config: config)
                     PageView(index: .two,
-                             proxy: scrollView,
-                             config: config, anchor: .center)
+                             config: config)
                     PageView(index: .three,
-                             proxy: scrollView,
-                             config: config, anchor: .center)
+                             config: config)
                     PageView(index: .four,
-                             proxy: scrollView,
-                             config: config, anchor: .center)
-                    if #available(iOS 15.0, *) {
-                        PageView(index: .five,
-                                 proxy: scrollView,
-                                 config: config, anchor: .center)
-                        PageView(index: .six,
-                                 proxy: scrollView,
-                                 config: config, anchor: .center)
-                    } else {
-                        // iOS14のscrollToで最終付近のアイテムにcenterを指定すると空白を作るので個別に対応。
-                        PageView(index: .five,
-                                 proxy: scrollView,
-                                 config: config, anchor: nil)
-                        PageView(index: .six,
-                                 proxy: scrollView,
-                                 config: config, anchor: .trailing)
-                    }
+                             config: config)
+                    PageView(index: .five,
+                             config: config)
+                    PageView(index: .six,
+                             config: config)
 //                    PageOneView(id: 0, proxy: scrollView)
 //                        .frame(maxWidth: .infinity, maxHeight: .infinity)
 //                        .background(Color.green)
@@ -85,8 +71,21 @@ struct SegmentPickerPageView: View {
 //                        }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .onChange(of: model.state.selectionIndex) { index in
+                    withAnimation {
+                        if #available(iOS 15.0, *) {
+                            scrollView.scrollTo(index.rawValue, anchor: .center)
+                        } else {
+                            if index == .five {
+                                scrollView.scrollTo(index.rawValue, anchor: nil)
+                            } else if index == .six {
+                                scrollView.scrollTo(index.rawValue, anchor: .trailing)
+                            }
+                        }
+                        
+                    }
+                }
             }
-            
         }
     }
 }

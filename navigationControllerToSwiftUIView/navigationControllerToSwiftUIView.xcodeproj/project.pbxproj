@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A1778FF28A4A0C80023E4A0 /* PageIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1778FE28A4A0C80023E4A0 /* PageIndex.swift */; };
 		9A17790228A92D050023E4A0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A17790128A92D050023E4A0 /* DetailViewController.swift */; };
+		9A17795A28C050050023E4A0 /* SegmentPickerPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A17795928C050050023E4A0 /* SegmentPickerPageViewModel.swift */; };
 		9A3EBA4328A37D3000D24E74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA4228A37D3000D24E74 /* AppDelegate.swift */; };
 		9A3EBA4528A37D3000D24E74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA4428A37D3000D24E74 /* SceneDelegate.swift */; };
 		9A3EBA4728A37D3000D24E74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EBA4628A37D3000D24E74 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		9A1778FE28A4A0C80023E4A0 /* PageIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndex.swift; sourceTree = "<group>"; };
 		9A17790128A92D050023E4A0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9A17795928C050050023E4A0 /* SegmentPickerPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentPickerPageViewModel.swift; sourceTree = "<group>"; };
 		9A3EBA3F28A37D3000D24E74 /* navigationControllerToSwiftUIView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = navigationControllerToSwiftUIView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3EBA4228A37D3000D24E74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3EBA4428A37D3000D24E74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 			path = UIParts;
 			sourceTree = "<group>";
 		};
+		9A17795828C04FE10023E4A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A17795928C050050023E4A0 /* SegmentPickerPageViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9A3EBA3628A37D3000D24E74 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 				9A3EBA7228A37DFF00D24E74 /* PageView.swift */,
 				9A1778FE28A4A0C80023E4A0 /* PageIndex.swift */,
 				9A3EBA7428A37E1400D24E74 /* Pages */,
+				9A17795828C04FE10023E4A0 /* Models */,
 				9A17790028A4A4AD0023E4A0 /* UIParts */,
 				9A3EBA4828A37D3000D24E74 /* Main.storyboard */,
 				9A3EBA4628A37D3000D24E74 /* ViewController.swift */,
@@ -320,6 +331,7 @@
 				9A3EBA7E28A3814300D24E74 /* SegmentedPickerExample.swift in Sources */,
 				9A3EBA8228A3814F00D24E74 /* View+OptionalAlignment.swift in Sources */,
 				9A3EBA7C28A380B500D24E74 /* PageThreeViewController.swift in Sources */,
+				9A17795A28C050050023E4A0 /* SegmentPickerPageViewModel.swift in Sources */,
 				9A3EBA4528A37D3000D24E74 /* SceneDelegate.swift in Sources */,
 				9A3EBA7A28A3809900D24E74 /* PageTwoViewController.swift in Sources */,
 				9A17790228A92D050023E4A0 /* DetailViewController.swift in Sources */,

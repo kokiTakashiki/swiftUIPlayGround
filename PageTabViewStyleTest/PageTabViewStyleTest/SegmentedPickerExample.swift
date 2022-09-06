@@ -8,21 +8,29 @@
 import SwiftUI
 
 struct SegmentedPickerExample: View {
-    let titles: [String]
+    //let titles: [String]
+    let index: [PageIndex]
     //@Binding var selectedIndex: Int
-    @Binding var selectedIndex: PageIndex
+    //@Binding var selectedIndex: PageIndex
+    @EnvironmentObject var model:SegmentPickerPageViewModel
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 12) {
                     SegmentedPicker(
-                        titles,
+                        index,
                         selectedIndex: Binding(
-                            get: { selectedIndex.rawValue },
-                            set: { selectedIndex = PageIndex(rawValue: $0) ?? .one }),
+                            get: {
+                                model.state.selectionIndex.rawValue
+                            },
+                            set: {
+                                //model.state.selectionIndex = PageIndex(rawValue: $0) ?? .one
+                                let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one)
+                                model.changeState(new: new)
+                            }),
                         selectionAlignment: .bottom,
                         content: { item, isSelected in
-                            Text(item)
+                            Text(item.name)
                                 .font(.system(size: 14, weight: .bold))
                                 .foregroundColor(isSelected ? Color.black : Color.gray )
                                 .padding(.horizontal, 18)
@@ -34,9 +42,9 @@ struct SegmentedPickerExample: View {
                                 Color.black.frame(height: 2)
                             }
                         })
-                        .onAppear {
-                            //selectedIndex = 0
-                        }
+//                        .onAppear {
+//                            //selectedIndex = 0
+//                        }
                         .animation(.easeInOut(duration: 0.3))
                 }
                 .padding(.horizontal, 12)
@@ -46,11 +54,11 @@ struct SegmentedPickerExample: View {
     }
 }
 
-struct SegmentedPickerExample_Previews: PreviewProvider {
-    //@State static var selectedInt = 0
-    @State static var selectedIndex: PageIndex = .one
-    static var previews: some View {
-        SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5","Page1","Page2"], selectedIndex: $selectedIndex)
-            .previewLayout(.fixed(width: 375, height: 54))
-    }
-}
+//struct SegmentedPickerExample_Previews: PreviewProvider {
+//    //@State static var selectedInt = 0
+//    @State static var selectedIndex: PageIndex = .one
+//    static var previews: some View {
+//        SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5","Page1","Page2"])
+//            .previewLayout(.fixed(width: 375, height: 54))
+//    }
+//}

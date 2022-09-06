@@ -30,6 +30,7 @@
 		9A5CE8E227BD36FB008D75A4 /* LanguageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8E127BD36FB008D75A4 /* LanguageLabelView.swift */; };
 		9A5CE8E527BE2776008D75A4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8E427BE2776008D75A4 /* APIError.swift */; };
 		9A5CE8E727BE27AC008D75A4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5CE8E627BE27AC008D75A4 /* UIViewController+Extension.swift */; };
+		9ACDA47E28C74977003721C9 /* SwiftUISimulator in Frameworks */ = {isa = PBXBuildFile; productRef = 9ACDA47D28C74977003721C9 /* SwiftUISimulator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACDA47E28C74977003721C9 /* SwiftUISimulator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +260,9 @@
 			dependencies = (
 			);
 			name = GithubAPIMyList;
+			packageProductDependencies = (
+				9ACDA47D28C74977003721C9 /* SwiftUISimulator */,
+			);
 			productName = GithubAPIMyList;
 			productReference = 9A5CE88D27BC8AA7008D75A4 /* GithubAPIMyList.app */;
 			productType = "com.apple.product-type.application";
@@ -331,6 +336,9 @@
 				ja,
 			);
 			mainGroup = 9A5CE88427BC8AA7008D75A4;
+			packageReferences = (
+				9ACDA47C28C74977003721C9 /* XCRemoteSwiftPackageReference "SwiftUI-Simulator" */,
+			);
 			productRefGroup = 9A5CE88E27BC8AA7008D75A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -735,6 +743,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9ACDA47C28C74977003721C9 /* XCRemoteSwiftPackageReference "SwiftUI-Simulator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YusukeHosonuma/SwiftUI-Simulator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9ACDA47D28C74977003721C9 /* SwiftUISimulator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ACDA47C28C74977003721C9 /* XCRemoteSwiftPackageReference "SwiftUI-Simulator" */;
+			productName = SwiftUISimulator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9A5CE88527BC8AA7008D75A4 /* Project object */;
 }

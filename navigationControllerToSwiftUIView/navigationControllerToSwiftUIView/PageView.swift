@@ -10,9 +10,7 @@ import UIKit
 
 struct PageView: View {
     var index: PageIndex
-    var proxy: ScrollViewProxy
     let config: Configuration
-    let anchor: UnitPoint?
     var body: some View {
         GenericUIViewController(config: config, factory: {
             switch index {
@@ -32,11 +30,6 @@ struct PageView: View {
         })
         //.frame(minWidth: .infinity, maxHeight: .infinity)
         .tag(index)
-        .onAppear {
-            withAnimation {
-                proxy.scrollTo(index.rawValue, anchor: anchor)
-            }
-        }
     }
 }
 
