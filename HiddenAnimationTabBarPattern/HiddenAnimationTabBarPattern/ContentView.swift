@@ -14,26 +14,27 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-    //            TabContentView(
-    //                selection: $selection,
-    //                isHiddenTabBar: $isHiddenTabBar
-    //            ) {
-    //                Text("test")
-    //                Text("test2")
-    //            }
-                CustomTabBarContainerView(
-                    selection: $selectionItem,
+                TabContentView(
+                    selection: $selection,
                     isHiddenTabBar: $isHiddenTabBar
                 ) {
                     Color.red
-                        .tabBarItem(tab: .house, selection: $selectionItem)
-                    
                     Color.blue
-                        .tabBarItem(tab: .car, selection: $selectionItem)
-                    
                     Color.green
-                        .tabBarItem(tab: .person, selection: $selectionItem)
                 }
+//                CustomTabBarContainerView(
+//                    selection: $selectionItem,
+//                    isHiddenTabBar: $isHiddenTabBar
+//                ) {
+//                    Color.red
+//                        .tabBarItem(tab: .house, selection: $selectionItem)
+//
+//                    Color.blue
+//                        .tabBarItem(tab: .car, selection: $selectionItem)
+//
+//                    Color.green
+//                        .tabBarItem(tab: .person, selection: $selectionItem)
+//                }
                 
                 Button {
                     isHiddenTabBar.toggle()
