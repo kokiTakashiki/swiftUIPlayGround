@@ -20,6 +20,7 @@
 		9AE216C428C8F03D00227F88 /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE216C328C8F03D00227F88 /* CustomTabBarContainerView.swift */; };
 		9AE216C628C8F22A00227F88 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE216C528C8F22A00227F88 /* TabBarItemsPreferenceKey.swift */; };
 		9AE216C828C8F70E00227F88 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE216C728C8F70E00227F88 /* TabBarItem.swift */; };
+		9AE216CE28C99F0500227F88 /* SwiftUISimulator in Frameworks */ = {isa = PBXBuildFile; productRef = 9AE216CD28C99F0500227F88 /* SwiftUISimulator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE216CE28C99F0500227F88 /* SwiftUISimulator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +187,9 @@
 			dependencies = (
 			);
 			name = HiddenAnimationTabBarPattern;
+			packageProductDependencies = (
+				9AE216CD28C99F0500227F88 /* SwiftUISimulator */,
+			);
 			productName = HiddenAnimationTabBarPattern;
 			productReference = 9AE2168E28C8E7CD00227F88 /* HiddenAnimationTabBarPattern.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +262,9 @@
 				Base,
 			);
 			mainGroup = 9AE2168528C8E7CD00227F88;
+			packageReferences = (
+				9AE216CC28C99F0500227F88 /* XCRemoteSwiftPackageReference "SwiftUI-Simulator" */,
+			);
 			productRefGroup = 9AE2168F28C8E7CD00227F88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -631,6 +639,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9AE216CC28C99F0500227F88 /* XCRemoteSwiftPackageReference "SwiftUI-Simulator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YusukeHosonuma/SwiftUI-Simulator.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9AE216CD28C99F0500227F88 /* SwiftUISimulator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9AE216CC28C99F0500227F88 /* XCRemoteSwiftPackageReference "SwiftUI-Simulator" */;
+			productName = SwiftUISimulator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9AE2168628C8E7CD00227F88 /* Project object */;
 }
