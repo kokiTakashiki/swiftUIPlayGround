@@ -10,6 +10,7 @@ import SwiftUI
 struct TabContentView<TabContent>: View {
     
     private let tabContents: [AnyView]
+    private let tabs: [TabBarItem] = TabBarItem.allCases
     
     @Binding var selection: Int
     @Binding var isHiddenTabBar: Bool
@@ -26,8 +27,7 @@ struct TabContentView<TabContent>: View {
 
     var body: some View {
         TabBarController(tabContents: tabContents,
-                         titles: ["a","b"],
-                         icons: ["house","car"],
+                         tabs: tabs,
                          currentTab: $selection,
                          isHiddenTabBar: $isHiddenTabBar)
     }

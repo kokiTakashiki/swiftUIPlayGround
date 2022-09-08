@@ -21,6 +21,7 @@ struct CustomTabBarView: View {
                     }
             }
         }
+        .frame(height: 50)
     }
 }
 

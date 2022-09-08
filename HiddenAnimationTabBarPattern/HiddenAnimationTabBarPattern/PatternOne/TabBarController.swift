@@ -10,35 +10,30 @@ import UIKit
 
 struct TabBarController: UIViewControllerRepresentable {
     var tabContents: [AnyView]
-    var titles: [String?]
-    var icons: [String]
-    
+    let tabs: [TabBarItem]
     
     @Binding var currentTab: Int
     
     @Binding var isHiddenTabBar: Bool
     internal var constTabBarFrame: CGRect = CGRect()
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
 
     func makeUIViewController(context: Context) -> UITabBarController {
-        //let tabViewManager = TabViewManager()
+        
         let controller = UITabBarController()
 
         let contents:[UIViewController] = tabContents.enumerated().reduce(into: []) { contents, tab in
             let content = UIHostingController(rootView: tab.element)
-            content.tabBarItem = UITabBarItem(title: titles[tab.offset], image: UIImage(systemName: icons[tab.offset]), tag: tab.offset)
+            content.tabBarItem = UITabBarItem(title: tabs[tab.offset].title, image: UIImage(systemName: tabs[tab.offset].iconName), tag: tab.offset)
             contents.append(content)
         }
         
-//        let vc1 = UIHostingController(rootView: FirstView().environmentObject(tabViewManager))
-//        vc1.tabBarItem = UITabBarItem(title: "tab1", image: UIImage(systemName: "house"), tag: 1)
-//
-//        let vc2 = UIHostingController(rootView: SecondView().environmentObject(tabViewManager))
-//        vc2.tabBarItem = UITabBarItem(title: "tab2", image: UIImage(systemName: "car"), tag: 2)
-
-//        let vcs = [vc1, vc2]
         controller.setViewControllers(contents, animated: true)
         controller.tabBar.frame = constTabBarFrame
-        controller.tabBar.backgroundColor = .green
+        controller.tabBar.tintColor = .blue
         return controller
     }
 
@@ -49,6 +44,19 @@ struct TabBarController: UIViewControllerRepresentable {
             safeAreaBottom: tabBarController.view.safeAreaInsets.bottom,
             visible: isHiddenTabBar
         )
+    }
+    
+    class Coordinator: NSObject, UITabBarControllerDelegate {
+        
+        var parent: TabBarController
+
+        init(_ tabBarController: TabBarController) {
+            parent = tabBarController
+        }
+        
+        func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+            parent.currentTab = tabBarController.selectedIndex
+        }
     }
     
     private func hiddenAnimation(tabBar: UITabBar, safeAreaBottom: CGFloat, visible: Bool) {
