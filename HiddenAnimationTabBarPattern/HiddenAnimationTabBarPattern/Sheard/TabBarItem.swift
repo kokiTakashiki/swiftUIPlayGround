@@ -8,7 +8,10 @@
 import SwiftUI
 import UIKit
 
-enum TabBarItem: Hashable, CaseIterable {
+enum TabBarItem: Int, CaseIterable, Identifiable {
+    
+    var id: String { UUID().uuidString }
+    
     case house, car, person, message, phone, ring
     
 //    var tabBarItem: UITabBarItem {

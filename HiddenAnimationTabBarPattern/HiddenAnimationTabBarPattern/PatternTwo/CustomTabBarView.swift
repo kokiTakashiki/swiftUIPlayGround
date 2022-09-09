@@ -39,7 +39,7 @@ extension CustomTabBarView {
     }
     
     private func switchToTab(tab: TabBarItem) {
-        withAnimation(.easeInOut) {
+        withAnimation(.easeOut) {
             selection = tab
         }
     }
