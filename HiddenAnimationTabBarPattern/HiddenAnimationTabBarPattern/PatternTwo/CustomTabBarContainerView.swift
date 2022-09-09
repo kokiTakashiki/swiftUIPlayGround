@@ -26,11 +26,12 @@ struct CustomTabBarContainerView<Content: View>: View {
     var body: some View {
         GeometryReader { reader in
             ZStack(alignment: .bottom) {
-                content
-                    .isHidden(tabs.count == tabsMaxCount ? true : false, remove: true)
                 if tabs.count == tabsMaxCount {
                     content
                         .ignoresSafeArea(edges: [.bottom])
+                } else {
+                    content
+                        .isHidden(tabs.count == tabsMaxCount ? true : false, remove: true)
                 }
                 
 //                CustomTabBarView(
@@ -87,9 +88,9 @@ struct CustomTabBarContainerView_Previews: PreviewProvider {
                 selection: .constant(tabs.first!)
             ) {
                 Color.red
-                    .tabBarItem(tab: tabs.first!, selection: .constant(tabs.first!))
+                    .tabBarItemPresent(tab: tabs.first!, selection: .constant(tabs.first!))
                 Color.blue
-                    .tabBarItem(tab: tabs[1], selection: .constant(tabs[1]))
+                    .tabBarItemPresent(tab: tabs[1], selection: .constant(tabs[1]))
             }
             .previewDevice(PreviewDevice(rawValue: deviceName))
             .previewDisplayName(deviceName)
