@@ -1,6 +1,6 @@
 //
 //  CustomTabBarGenericView.swift
-//  HiddenAnimationTabBarPattern
+//  HiddenAnimationTabBar_iOS14Support
 //
 //  Created by 武田孝騎 on 2022/09/09.
 //
@@ -46,4 +46,3 @@ extension CustomTabBarGenericView {
         }
     }
 }
-
