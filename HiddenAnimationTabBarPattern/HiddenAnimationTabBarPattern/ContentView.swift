@@ -14,27 +14,40 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-                TabContentView(
-                    selection: $selection,
-                    isHiddenTabBar: $isHiddenTabBar
-                ) {
-                    Color.red
-                    Color.blue
-                    Color.green
-                }
-//                CustomTabBarContainerView(
-//                    selection: $selectionItem,
-//                    isHiddenTabBar: $isHiddenTabBar
+//                TabContentContainerView(
+//                    selection: $selection,
+//                    tabsMaxCount: 3
 //                ) {
 //                    Color.red
-//                        .tabBarItem(tab: .house, selection: $selectionItem)
-//
+//                        .uiTabBarItem(.house)
 //                    Color.blue
-//                        .tabBarItem(tab: .car, selection: $selectionItem)
-//
+//                        .uiTabBarItem(.car)
 //                    Color.green
-//                        .tabBarItem(tab: .person, selection: $selectionItem)
+//                        .uiTabBarItem(.person)
 //                }
+//                .isHiddenTabBar(isHiddenTabBar)
+                CustomTabBarContainerView(
+                    selection: $selectionItem
+                ) {
+                    Color.red
+                        .tabBarItem(tab: .house, selection: $selectionItem)
+
+                    Color.blue
+                        .tabBarItem(tab: .car, selection: $selectionItem)
+
+                    Color.green
+                        .tabBarItem(tab: .person, selection: $selectionItem)
+                    
+                    Color.red
+                        .tabBarItem(tab: .message, selection: $selectionItem)
+
+                    Color.blue
+                        .tabBarItem(tab: .phone, selection: $selectionItem)
+
+                    Color.green
+                        .tabBarItem(tab: .ring, selection: $selectionItem)
+                }
+                .isHiddenTabBar(isHiddenTabBar)
                 
                 Button {
                     isHiddenTabBar.toggle()

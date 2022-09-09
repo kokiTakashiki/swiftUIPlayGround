@@ -11,27 +11,40 @@ struct CustomTabBarContainerView<Content: View>: View {
     
     @Binding var selection: TabBarItem
     let content: Content
+    private let tabsMaxCount = TabBarItem.allCases.count
     @State private var tabs: [TabBarItem] = []
-    @Binding var isHiddenTabBar: Bool
+    @Environment(\.isHiddenTabBar) var isHiddenTabBar: Bool
     
-    init(selection: Binding<TabBarItem>, isHiddenTabBar: Binding<Bool>, @ViewBuilder content: () -> Content) {
+    init(
+        selection: Binding<TabBarItem>,
+        @ViewBuilder content: () -> Content
+    ) {
         self._selection = selection
-        self._isHiddenTabBar = isHiddenTabBar
         self.content = content()
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            content
-            
-            CustomTabBarView(tabs: tabs, selection: $selection)
+        GeometryReader { reader in
+            ZStack(alignment: .bottom) {
+                content
+                    .isHidden(tabs.count == tabsMaxCount ? true : false, remove: true)
+                if tabs.count == tabsMaxCount {
+                    content
+                        .ignoresSafeArea(edges: [.bottom])
+                }
+                
+                CustomTabBarView(
+                    tabs: tabs,
+                    selection: $selection
+                )
                 .background(.white)
-                .offset(y: isHiddenTabBar ? 50 : 0)
+                .offset(y: isHiddenTabBar ? 50 + reader.safeAreaInsets.bottom : 0)
                 .animation(.easeInOut(duration: 0.5), value: isHiddenTabBar)
+            }
+            .onPreferenceChange(TabBarItemsPreferenceKey.self, perform: { value in
+                self.tabs = value
+            })
         }
-        .onPreferenceChange(TabBarItemsPreferenceKey.self, perform: { value in
-            self.tabs = value
-        })
     }
 }
 
@@ -43,9 +56,11 @@ struct CustomTabBarContainerView_Previews: PreviewProvider {
         ForEach(["iPhone 12", "iPod touch (7th generation)"], id: \.self) { deviceName in
             
             CustomTabBarContainerView(
-                selection: .constant(tabs.first!), isHiddenTabBar: .constant(false)) {
-                    Color.red
-                }
+                selection: .constant(tabs.first!)
+            ) {
+                Color.red
+                    .tabBarItem(tab: tabs.first!, selection: .constant(tabs.first!))
+            }
             .previewDevice(PreviewDevice(rawValue: deviceName))
             .previewDisplayName(deviceName)
         }

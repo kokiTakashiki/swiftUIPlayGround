@@ -15,13 +15,14 @@ import SwiftUI
 struct HiddenAnimationTabBarPatternApp: App {
     var body: some Scene {
         WindowGroup {
-            #if DEBUG
-            SimulatorView { // ✅ Please surround the your app's root view with `SimulatorView`.
-                ContentView()
-            }
-            #else
+//            #if DEBUG
+//            SimulatorView { // ✅ Please surround the your app's root view with `SimulatorView`.
+//                ContentView()
+//            }
+//            #else
+//            ContentView()
+//            #endif
             ContentView()
-            #endif
         }
     }
 }

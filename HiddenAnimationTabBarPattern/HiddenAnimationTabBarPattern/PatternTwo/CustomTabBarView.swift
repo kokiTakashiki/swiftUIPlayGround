@@ -39,7 +39,7 @@ extension CustomTabBarView {
     }
     
     private func switchToTab(tab: TabBarItem) {
-        withAnimation(.easeOut) {
+        withAnimation(.easeInOut) {
             selection = tab
         }
     }
@@ -55,7 +55,7 @@ struct CustomTabBarView_Previews: PreviewProvider {
             VStack {
                 Spacer()
                 CustomTabBarView(tabs: tabs, selection: .constant(tabs.first!))
-                    .background(.green)
+                    .background(.white)
             }
             .previewDevice(PreviewDevice(rawValue: deviceName))
             .previewDisplayName(deviceName)
