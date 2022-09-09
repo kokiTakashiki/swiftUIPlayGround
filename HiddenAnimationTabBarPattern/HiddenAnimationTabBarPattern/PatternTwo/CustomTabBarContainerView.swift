@@ -33,13 +33,41 @@ struct CustomTabBarContainerView<Content: View>: View {
                         .ignoresSafeArea(edges: [.bottom])
                 }
                 
-                CustomTabBarView(
-                    tabs: tabs,
-                    selection: $selection
-                )
-                .background(.white)
+//                CustomTabBarView(
+//                    tabs: tabs,
+//                    selection: $selection
+//                )
+//                .background(.white)
+//                .offset(y: isHiddenTabBar ? 50 + reader.safeAreaInsets.bottom : 0)
+//                .animation(.easeInOut(duration: 0.5), value: isHiddenTabBar)
+                Group {
+                    CustomTabBarGenericView(
+                        tabs,
+                        selectedIndex: Binding(
+                            get: {
+                                selection.rawValue
+                                
+                            },
+                            set: {
+                                selection = TabBarItem(rawValue: $0) ?? .house
+                                
+                            }),
+                        content: { item, isSelected  in
+                            VStack {
+                                Image(systemName: item.iconName)
+                                    .font(.title)
+                                Text(item.title)
+                                    .font(.footnote)
+                            }
+                            .foregroundColor(isSelected ? item.color : .gray)
+                            .padding(.vertical,8)
+                            .frame(maxWidth: .infinity)
+                        }
+                    )
+                }
                 .offset(y: isHiddenTabBar ? 50 + reader.safeAreaInsets.bottom : 0)
                 .animation(.easeInOut(duration: 0.5), value: isHiddenTabBar)
+                
             }
             .onPreferenceChange(TabBarItemsPreferenceKey.self, perform: { value in
                 self.tabs = value
@@ -60,6 +88,8 @@ struct CustomTabBarContainerView_Previews: PreviewProvider {
             ) {
                 Color.red
                     .tabBarItem(tab: tabs.first!, selection: .constant(tabs.first!))
+                Color.blue
+                    .tabBarItem(tab: tabs[1], selection: .constant(tabs[1]))
             }
             .previewDevice(PreviewDevice(rawValue: deviceName))
             .previewDisplayName(deviceName)

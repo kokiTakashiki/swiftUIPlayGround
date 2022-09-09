@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A77F33028CA002F00E30240 /* TabContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A77F32F28CA002F00E30240 /* TabContentContainerView.swift */; };
 		9AE0BF4E28CAF7EF005907BD /* UITabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0BF4D28CAF7EF005907BD /* UITabBarItemsPreferenceKey.swift */; };
+		9AE0BF5028CAFFD1005907BD /* CustomTabBarGenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0BF4F28CAFFD1005907BD /* CustomTabBarGenericView.swift */; };
 		9AE2169228C8E7CD00227F88 /* HiddenAnimationTabBarPatternApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2169128C8E7CD00227F88 /* HiddenAnimationTabBarPatternApp.swift */; };
 		9AE2169428C8E7CD00227F88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2169328C8E7CD00227F88 /* ContentView.swift */; };
 		9AE2169628C8E7CE00227F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AE2169528C8E7CE00227F88 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		9A77F32F28CA002F00E30240 /* TabContentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentContainerView.swift; sourceTree = "<group>"; };
 		9AE0BF4D28CAF7EF005907BD /* UITabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		9AE0BF4F28CAFFD1005907BD /* CustomTabBarGenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarGenericView.swift; sourceTree = "<group>"; };
 		9AE2168E28C8E7CD00227F88 /* HiddenAnimationTabBarPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiddenAnimationTabBarPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE2169128C8E7CD00227F88 /* HiddenAnimationTabBarPatternApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenAnimationTabBarPatternApp.swift; sourceTree = "<group>"; };
 		9AE2169328C8E7CD00227F88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				9AE216C328C8F03D00227F88 /* CustomTabBarContainerView.swift */,
 				9AE216C128C8EA6C00227F88 /* CustomTabBarView.swift */,
+				9AE0BF4F28CAFFD1005907BD /* CustomTabBarGenericView.swift */,
 			);
 			path = PatternTwo;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				9AE216C428C8F03D00227F88 /* CustomTabBarContainerView.swift in Sources */,
 				9AE216C228C8EA6C00227F88 /* CustomTabBarView.swift in Sources */,
 				9AE216BE28C8E83700227F88 /* TabBarController.swift in Sources */,
+				9AE0BF5028CAFFD1005907BD /* CustomTabBarGenericView.swift in Sources */,
 				9AE216BC28C8E81A00227F88 /* TabContentView.swift in Sources */,
 				9AE216C828C8F70E00227F88 /* TabBarItem.swift in Sources */,
 				9AE2169228C8E7CD00227F88 /* HiddenAnimationTabBarPatternApp.swift in Sources */,
