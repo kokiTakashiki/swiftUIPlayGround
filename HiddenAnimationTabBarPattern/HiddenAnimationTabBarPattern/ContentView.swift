@@ -26,28 +26,33 @@ struct ContentView: View {
 //                        .uiTabBarItem(.person)
 //                }
 //                .isHiddenTabBar(isHiddenTabBar)
-                CustomTabBarContainerView(
-                    selection: $selectionItem
-                ) {
-                    Color.red
-                        .tabBarItem(tab: .house, selection: $selectionItem)
-
-                    Color.blue
-                        .tabBarItem(tab: .car, selection: $selectionItem)
-
-                    Color.green
-                        .tabBarItem(tab: .person, selection: $selectionItem)
+                ContentViewTabBarContainerView(selection: $selectionItem) {
+                    testView(text: TabBarItem.house.title,
+                             bg: .red)
+                            .tabBarItem(.house, selection: $selectionItem)
                     
-                    Color.red
-                        .tabBarItem(tab: .message, selection: $selectionItem)
-
-                    Color.blue
-                        .tabBarItem(tab: .phone, selection: $selectionItem)
-
-                    Color.green
-                        .tabBarItem(tab: .ring, selection: $selectionItem)
+                    testView(text: TabBarItem.car.title,
+                             bg: .yellow)
+                            .tabBarItem(.car, selection: $selectionItem)
+                    
+                    testView(text: TabBarItem.person.title,
+                             bg: .green)
+                            .tabBarItem(.person, selection: $selectionItem)
+                    
+                    testView(text: TabBarItem.message.title,
+                             bg: .purple)
+                            .tabBarItem(.message, selection: $selectionItem)
+                    
+                    testView(text: TabBarItem.phone.title,
+                             bg: .orange)
+                            .tabBarItem(.phone, selection: $selectionItem)
+                    
+                    testView(text: TabBarItem.ring.title,
+                             bg: .primary)
+                            .tabBarItem(.ring, selection: $selectionItem)
                 }
                 .isHiddenTabBar(isHiddenTabBar)
+                .tabViewPresentMode(.sharp)
                 
                 Button {
                     isHiddenTabBar.toggle()
@@ -61,6 +66,15 @@ struct ContentView: View {
             }
         }
 
+    }
+}
+
+extension ContentView {
+    private func testView(text: String, bg: Color) -> some View {
+        ZStack {
+            bg
+            Text(text)
+        }
     }
 }
 

@@ -15,6 +15,24 @@ struct TabBarItemsPreferenceKey: PreferenceKey {
     }
 }
 
+struct TabBarItemViewModifier: ViewModifier {
+    
+    let tab: TabBarItem
+    @Binding var selection: TabBarItem
+    @Environment(\.customTabViewPresentMode) var mode: CustomTabViewPresentMode
+    
+    func body(content: Content) -> some View {
+        switch mode {
+        case .crossDissolve:
+            content
+                .modifier(TabBarItemViewCrossDissolveModifier(tab: tab, selection: $selection))
+        case .sharp:
+            content
+                .modifier(TabBarItemViewSharpModifier(tab: tab, selection: $selection))
+        }
+    }
+}
+
 struct TabBarItemViewCrossDissolveModifier: ViewModifier {
     
     let tab: TabBarItem
@@ -52,13 +70,17 @@ enum CustomTabViewPresentMode {
 
 extension View {
     @ViewBuilder
-    func tabBarItem(tab: TabBarItem, selection: Binding<TabBarItem>, mode: CustomTabViewPresentMode = .sharp) -> some View {
+    func tabBarItemPresent(tab: TabBarItem, selection: Binding<TabBarItem>, mode: CustomTabViewPresentMode = .sharp) -> some View {
         switch mode {
         case .crossDissolve:
             modifier(TabBarItemViewCrossDissolveModifier(tab: tab, selection: selection))
         case .sharp:
             modifier(TabBarItemViewSharpModifier(tab: tab, selection: selection))
         }
+    }
+    
+    func tabBarItem(_ tab: TabBarItem, selection: Binding<TabBarItem>) -> some View {
+        modifier(TabBarItemViewModifier(tab: tab, selection: selection))
     }
 }
 
@@ -106,6 +128,22 @@ extension View {
     }
 }
 
+struct CustomTabViewPresentModeSelectKey: EnvironmentKey {
+    static let defaultValue: CustomTabViewPresentMode = .sharp
+}
+
+extension EnvironmentValues {
+    var customTabViewPresentMode: CustomTabViewPresentMode {
+        get { self[CustomTabViewPresentModeSelectKey.self] }
+        set { self[CustomTabViewPresentModeSelectKey.self] = newValue }
+    }
+}
+
+extension View {
+    func tabViewPresentMode(_ value: CustomTabViewPresentMode) -> some View {
+        environment(\.customTabViewPresentMode, value)
+    }
+}
 
 
 
