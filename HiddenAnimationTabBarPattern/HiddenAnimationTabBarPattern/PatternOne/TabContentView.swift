@@ -7,54 +7,40 @@
 
 import SwiftUI
 
-struct TabContentView<TabContent>: View {
+struct TabContentView: View {
     
-    private let tabContents: [AnyView]
-    private let tabs: [TabBarItem] = TabBarItem.allCases
+    let tabContents: [AnyView]
+    let tabs: [TabBarItem] //= TabBarItem.allCases
+    let tabsMaxCount: Int
+    private var uiTabBarItem: [UITabBarItem] = []
     
     @Binding var selection: Int
-    @Binding var isHiddenTabBar: Bool
+    @State var isSetupComplete: Bool = false
+    @Environment(\.isHiddenTabBar) var isHiddenTabBar: Bool
     
     init(
         selection: Binding<Int>,
-        isHiddenTabBar: Binding<Bool>,
-        @ViewBuilder tabContent: @escaping () -> TupleView<TabContent>
+        tabs: [TabBarItem],
+        tabsMaxCount: Int,
+        tabContents: [AnyView]
     ) {
         self._selection = selection
-        self._isHiddenTabBar = isHiddenTabBar
-        self.tabContents = tabContent().getViews
+        self.tabs = tabs
+        self.tabsMaxCount = tabsMaxCount
+        self.tabContents = tabContents
+        tabs.forEach { item in
+            //uiTabBarItem.append(item.tabBarItem)
+        }
     }
 
     var body: some View {
         TabBarController(tabContents: tabContents,
-                         tabs: tabs,
+                         tabs: uiTabBarItem,
+                         tabsMaxCount: tabsMaxCount,
                          currentTab: $selection,
-                         isHiddenTabBar: $isHiddenTabBar)
-    }
-}
-
-extension TupleView {
-    var getViews: [AnyView] {
-        makeArray(from: value)
-    }
-    
-    private struct GenericView {
-        let body: Any
-        
-        var anyView: AnyView? {
-            AnyView(_fromValue: body)
+                         isSetupComplete: $isSetupComplete)
+        .onChange(of: isHiddenTabBar) { newValue in
+            isSetupComplete = true
         }
-    }
-    
-    private func makeArray<Tuple>(from tuple: Tuple) -> [AnyView] {
-        func convert(child: Mirror.Child) -> AnyView? {
-            withUnsafeBytes(of: child.value) { ptr -> AnyView? in
-                let binded = ptr.bindMemory(to: GenericView.self)
-                return binded.first?.anyView
-            }
-        }
-        
-        let tupleMirror = Mirror(reflecting: tuple)
-        return tupleMirror.children.compactMap(convert)
     }
 }
