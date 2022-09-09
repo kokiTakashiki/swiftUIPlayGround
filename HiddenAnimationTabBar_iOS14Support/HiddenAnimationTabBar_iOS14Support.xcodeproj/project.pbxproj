@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A55CEE628CBB49400E4668F /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A55CEE528CBB49400E4668F /* MatrixView.swift */; };
+		9A66C38928CB9B7000C0428E /* HideableTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66C38828CB9B7000C0428E /* HideableTabBarView.swift */; };
 		9AB4F7DA28CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4F7D928CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift */; };
 		9AB4F7DC28CB61B7003BDB56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4F7DB28CB61B7003BDB56 /* ContentView.swift */; };
 		9AB4F7DE28CB61B8003BDB56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4F7DD28CB61B8003BDB56 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A55CEE528CBB49400E4668F /* MatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
+		9A66C38828CB9B7000C0428E /* HideableTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideableTabBarView.swift; sourceTree = "<group>"; };
 		9AB4F7D628CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14Support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiddenAnimationTabBar_iOS14Support.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB4F7D928CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenAnimationTabBar_iOS14SupportApp.swift; sourceTree = "<group>"; };
 		9AB4F7DB28CB61B7003BDB56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A55CEE428CBB47500E4668F /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				9A55CEE528CBB49400E4668F /* MatrixView.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
 		9AB4F7CD28CB61B7003BDB56 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +126,7 @@
 				9AB4F7D928CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift */,
 				9AB4F7DB28CB61B7003BDB56 /* ContentView.swift */,
 				9AB4F80328CB6321003BDB56 /* TabBarView */,
+				9A55CEE428CBB47500E4668F /* Contents */,
 				9AB4F7DD28CB61B8003BDB56 /* Assets.xcassets */,
 				9AB4F7DF28CB61B8003BDB56 /* Preview Content */,
 			);
@@ -148,6 +161,7 @@
 		9AB4F80328CB6321003BDB56 /* TabBarView */ = {
 			isa = PBXGroup;
 			children = (
+				9A66C38828CB9B7000C0428E /* HideableTabBarView.swift */,
 				9AB4F80628CB63B7003BDB56 /* ContentViewTabBarContainerView.swift */,
 				9AB4F80428CB6348003BDB56 /* CustomTabBarGenericView.swift */,
 			);
@@ -326,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A55CEE628CBB49400E4668F /* MatrixView.swift in Sources */,
 				9AB4F80528CB6348003BDB56 /* CustomTabBarGenericView.swift in Sources */,
 				9AB4F81428CB64DF003BDB56 /* HiddenTabBarKey.swift in Sources */,
 				9AB4F7DC28CB61B7003BDB56 /* ContentView.swift in Sources */,
@@ -334,6 +349,7 @@
 				9AB4F80A28CB6416003BDB56 /* TabBarItem.swift in Sources */,
 				9AB4F80D28CB6457003BDB56 /* TabBarItemsPreferenceKey.swift in Sources */,
 				9AB4F7DA28CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift in Sources */,
+				9A66C38928CB9B7000C0428E /* HideableTabBarView.swift in Sources */,
 				9AB4F80728CB63B7003BDB56 /* ContentViewTabBarContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

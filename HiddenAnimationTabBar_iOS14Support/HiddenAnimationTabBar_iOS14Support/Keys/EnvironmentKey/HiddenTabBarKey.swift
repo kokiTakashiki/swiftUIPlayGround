@@ -19,7 +19,7 @@ extension EnvironmentValues {
 }
 
 extension View {
-    func isHiddenTabBar(_ value: Bool) -> some View {
-        environment(\.isHiddenTabBar, value)
+    func hiddenTabBar(is: Bool) -> some View {
+        environment(\.isHiddenTabBar, `is`)
     }
 }

@@ -20,7 +20,18 @@ enum TabBarItem: Int, CaseIterable, Identifiable {
         case .person: return "person"
         case .message: return "message"
         case .phone: return "phone"
-        case .ring: return "ring"
+        case .ring: return "pencil.circle"
+        }
+    }
+    
+    var selectedIconName: String {
+        switch self {
+        case .house: return "house.fill"
+        case .car: return "car.fill"
+        case .person: return "person.fill"
+        case .message: return "message.fill"
+        case .phone: return "phone.fill"
+        case .ring: return "pencil.circle.fill"
         }
     }
     
@@ -31,7 +42,7 @@ enum TabBarItem: Int, CaseIterable, Identifiable {
         case .person: return "person"
         case .message: return "message"
         case .phone: return "phone"
-        case .ring: return "ring"
+        case .ring: return "pencil"
         }
     }
     
