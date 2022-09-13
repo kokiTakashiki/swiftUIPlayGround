@@ -24,6 +24,7 @@ struct HideableTabBarView<Element, Content, TabItem>: View
     private let data: Data
     private let content: Content
     private let tabItem: (Data.Element, Bool) -> TabItem
+    private let tabHeight:CGFloat = 50.0
     
     //
     // Environment
@@ -48,9 +49,11 @@ struct HideableTabBarView<Element, Content, TabItem>: View
                 // create contents
                 content
 
-                tabBar(reader: reader)
-                    .offset(y: isHiddenTabBar ? 50 + reader.safeAreaInsets.bottom : 0)
-                    .animation(.easeInOut(duration: 0.5), value: isHiddenTabBar)
+                VStack(spacing: 0) {
+                    tabBar
+                    safeAreaBottomSquare(reader: reader)
+                }
+                .tabBarHidden(is: isHiddenTabBar, height: tabHeight + reader.safeAreaInsets.bottom)
 
             }
             .ignoresSafeArea(edges: [.bottom])
@@ -58,17 +61,16 @@ struct HideableTabBarView<Element, Content, TabItem>: View
     }
 }
 
+fileprivate extension View {
+    func tabBarHidden(is: Bool, height: Double) -> some View {
+        offset(y: `is` ? height : 0)
+        .animation(.easeInOut(duration: 0.5), value: `is`)
+    }
+}
+
 extension HideableTabBarView {
     
-    private func tabBar(reader: GeometryProxy) -> some View {
-        VStack(spacing: 0) {
-            tabBarItems()
-            Color.white
-                .frame(height: reader.safeAreaInsets.bottom)
-        }
-    }
-    
-    private func tabBarItems() -> some View {
+    private var tabBar: some View {
         HStack {
             ForEach(data.indices, id: \.self) { index in
                 tabItem(data[index], selectedIndex == index)
@@ -77,8 +79,13 @@ extension HideableTabBarView {
                     }
             }
         }
-        .frame(height: 50)
+        .frame(height: tabHeight)
         .background(Color.white)
+    }
+    
+    private func safeAreaBottomSquare(reader: GeometryProxy) -> some View {
+        Color.white
+            .frame(height: reader.safeAreaInsets.bottom)
     }
 }
 
