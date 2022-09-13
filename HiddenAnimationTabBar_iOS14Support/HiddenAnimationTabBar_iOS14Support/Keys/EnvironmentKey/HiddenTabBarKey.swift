@@ -17,9 +17,3 @@ extension EnvironmentValues {
         set { self[HiddenTabBarKey.self] = newValue }
     }
 }
-
-extension View {
-    func hiddenTabBar(is: Bool) -> some View {
-        environment(\.isHiddenTabBar, `is`)
-    }
-}

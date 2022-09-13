@@ -33,3 +33,10 @@ extension View {
         }
     }
 }
+
+extension View {
+    func p(_ string: String) -> some View {
+        print(string)
+        return self
+    }
+}

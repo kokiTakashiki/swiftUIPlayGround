@@ -11,7 +11,7 @@ import SwiftUI
 struct HiddenAnimationTabBar_iOS14SupportApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(ListViewModel())
         }
     }
 }
