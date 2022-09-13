@@ -104,6 +104,7 @@
 		9A55CEE428CBB47500E4668F /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				9A55CEEF28CCC49C00E4668F /* InifiniteListTest.swift */,
 				9A55CEE528CBB49400E4668F /* MatrixView.swift */,
 			);
 			path = Contents;
@@ -122,7 +123,6 @@
 			children = (
 				9AB4F7DB28CB61B7003BDB56 /* ContentView.swift */,
 				9A55CEE928CCC13600E4668F /* SubContentView.swift */,
-				9A55CEEF28CCC49C00E4668F /* InifiniteListTest.swift */,
 				9AB4F80328CB6321003BDB56 /* TabBarView */,
 				9A55CEE428CBB47500E4668F /* Contents */,
 				9A55CEF128CCC4D300E4668F /* Parts */,
