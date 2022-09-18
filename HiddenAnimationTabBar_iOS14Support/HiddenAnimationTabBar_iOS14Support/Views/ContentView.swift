@@ -95,7 +95,7 @@ extension ContentView {
             MatrixView()
                 .transition(.identity)
         case .ring:
-            testView(text: TabBarItem.ring.title, bg: .gray)
+            SafariTabBar()
                 .transition(.identity)
         }
     }
