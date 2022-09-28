@@ -70,7 +70,7 @@
 		9A3EBA7728A3800A00D24E74 /* SegmentPickerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentPickerPageView.swift; sourceTree = "<group>"; };
 		9A3EBA7928A3809900D24E74 /* PageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoViewController.swift; sourceTree = "<group>"; };
 		9A3EBA7B28A380B500D24E74 /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
-		9A3EBA7D28A3814300D24E74 /* SegmentedPickerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentedPickerExample.swift; path = ../../PageTabViewStyleTest/PageTabViewStyleTest/SegmentedPickerExample.swift; sourceTree = "<group>"; };
+		9A3EBA7D28A3814300D24E74 /* SegmentedPickerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedPickerExample.swift; sourceTree = "<group>"; };
 		9A3EBA7F28A3814A00D24E74 /* SegmentedPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		9A3EBA8128A3814F00D24E74 /* View+OptionalAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+OptionalAlignment.swift"; sourceTree = "<group>"; };
 		9A3EBA8328A3815400D24E74 /* HorizontalAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalAlignment.swift; sourceTree = "<group>"; };

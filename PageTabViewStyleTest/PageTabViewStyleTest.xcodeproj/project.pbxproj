@@ -14,14 +14,10 @@
 		9A3EB9BF28A0DC6100D24E74 /* PageTabViewStyleTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9BE28A0DC6100D24E74 /* PageTabViewStyleTestTests.swift */; };
 		9A3EB9C928A0DC6100D24E74 /* PageTabViewStyleTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9C828A0DC6100D24E74 /* PageTabViewStyleTestUITests.swift */; };
 		9A3EB9CB28A0DC6100D24E74 /* PageTabViewStyleTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9CA28A0DC6100D24E74 /* PageTabViewStyleTestUITestsLaunchTests.swift */; };
-		9A3EB9D828A0DD6000D24E74 /* SegmentedPickerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9D728A0DD6000D24E74 /* SegmentedPickerExample.swift */; };
-		9A3EB9DA28A0DDA700D24E74 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9D928A0DDA700D24E74 /* SegmentedPicker.swift */; };
-		9A3EB9DC28A0E65000D24E74 /* View+OptionalAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9DB28A0E65000D24E74 /* View+OptionalAlignment.swift */; };
-		9A3EB9DE28A0E66E00D24E74 /* HorizontalAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9DD28A0E66E00D24E74 /* HorizontalAlignment.swift */; };
-		9A3EB9E028A0EB6C00D24E74 /* SegmentedPickerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9DF28A0EB6C00D24E74 /* SegmentedPickerPageView.swift */; };
 		9A3EB9E228A0F30500D24E74 /* YokoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9E128A0F30500D24E74 /* YokoItemView.swift */; };
 		9A3EB9E428A0F3F900D24E74 /* ToolBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9E328A0F3F900D24E74 /* ToolBarItem.swift */; };
-		9A3EB9E628A0FA3C00D24E74 /* ExpandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EB9E528A0FA3C00D24E74 /* ExpandingView.swift */; };
+		9AEC1DF928E4381500A93DDC /* ImagePager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1DF828E4381500A93DDC /* ImagePager.swift */; };
+		9AEC1DFB28E43DFD00A93DDC /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1DFA28E43DFD00A93DDC /* PagerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +48,10 @@
 		9A3EB9C428A0DC6100D24E74 /* PageTabViewStyleTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PageTabViewStyleTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3EB9C828A0DC6100D24E74 /* PageTabViewStyleTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTabViewStyleTestUITests.swift; sourceTree = "<group>"; };
 		9A3EB9CA28A0DC6100D24E74 /* PageTabViewStyleTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTabViewStyleTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9A3EB9D728A0DD6000D24E74 /* SegmentedPickerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerExample.swift; sourceTree = "<group>"; };
-		9A3EB9D928A0DDA700D24E74 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
-		9A3EB9DB28A0E65000D24E74 /* View+OptionalAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+OptionalAlignment.swift"; sourceTree = "<group>"; };
-		9A3EB9DD28A0E66E00D24E74 /* HorizontalAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalAlignment.swift; sourceTree = "<group>"; };
-		9A3EB9DF28A0EB6C00D24E74 /* SegmentedPickerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPickerPageView.swift; sourceTree = "<group>"; };
 		9A3EB9E128A0F30500D24E74 /* YokoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YokoItemView.swift; sourceTree = "<group>"; };
 		9A3EB9E328A0F3F900D24E74 /* ToolBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarItem.swift; sourceTree = "<group>"; };
-		9A3EB9E528A0FA3C00D24E74 /* ExpandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingView.swift; sourceTree = "<group>"; };
+		9AEC1DF828E4381500A93DDC /* ImagePager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePager.swift; sourceTree = "<group>"; };
+		9AEC1DFA28E43DFD00A93DDC /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,16 +104,12 @@
 			children = (
 				9A3EB9AD28A0DC5F00D24E74 /* PageTabViewStyleTestApp.swift */,
 				9A3EB9AF28A0DC5F00D24E74 /* ContentView.swift */,
-				9A3EB9D728A0DD6000D24E74 /* SegmentedPickerExample.swift */,
-				9A3EB9D928A0DDA700D24E74 /* SegmentedPicker.swift */,
-				9A3EB9DB28A0E65000D24E74 /* View+OptionalAlignment.swift */,
-				9A3EB9DD28A0E66E00D24E74 /* HorizontalAlignment.swift */,
-				9A3EB9E528A0FA3C00D24E74 /* ExpandingView.swift */,
-				9A3EB9DF28A0EB6C00D24E74 /* SegmentedPickerPageView.swift */,
 				9A3EB9B128A0DC6000D24E74 /* Assets.xcassets */,
 				9A3EB9B328A0DC6000D24E74 /* Preview Content */,
+				9AEC1DF828E4381500A93DDC /* ImagePager.swift */,
 				9A3EB9E128A0F30500D24E74 /* YokoItemView.swift */,
 				9A3EB9E328A0F3F900D24E74 /* ToolBarItem.swift */,
+				9AEC1DFA28E43DFD00A93DDC /* PagerView.swift */,
 			);
 			path = PageTabViewStyleTest;
 			sourceTree = "<group>";
@@ -281,15 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AEC1DF928E4381500A93DDC /* ImagePager.swift in Sources */,
 				9A3EB9B028A0DC5F00D24E74 /* ContentView.swift in Sources */,
 				9A3EB9E228A0F30500D24E74 /* YokoItemView.swift in Sources */,
-				9A3EB9DE28A0E66E00D24E74 /* HorizontalAlignment.swift in Sources */,
-				9A3EB9E628A0FA3C00D24E74 /* ExpandingView.swift in Sources */,
-				9A3EB9E028A0EB6C00D24E74 /* SegmentedPickerPageView.swift in Sources */,
 				9A3EB9E428A0F3F900D24E74 /* ToolBarItem.swift in Sources */,
-				9A3EB9D828A0DD6000D24E74 /* SegmentedPickerExample.swift in Sources */,
-				9A3EB9DA28A0DDA700D24E74 /* SegmentedPicker.swift in Sources */,
-				9A3EB9DC28A0E65000D24E74 /* View+OptionalAlignment.swift in Sources */,
+				9AEC1DFB28E43DFD00A93DDC /* PagerView.swift in Sources */,
 				9A3EB9AE28A0DC5F00D24E74 /* PageTabViewStyleTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

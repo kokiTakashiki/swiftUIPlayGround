@@ -11,60 +11,10 @@ struct ContentView: View {
     @State private var selection = 0
     
     var body: some View {
-        ScrollViewReader { scrollView in
-            VStack(spacing: 0) {
-                SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5"], selectedIndex: $selection)
-                
-                TabView(selection: $selection) {
-                    Text("Page 1")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.red)
-                        .tag(0)
-                        .onAppear{
-                            withAnimation {
-                                scrollView.scrollTo(0, anchor: .center)
-                            }
-                        }
-                    Text("Page 2")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.green)
-                        .tag(1)
-                        .onAppear{
-                            withAnimation {
-                                scrollView.scrollTo(1, anchor: .center)
-                            }
-                        }
-                    Text("Page 3")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.blue)
-                        .tag(2)
-                        .onAppear{
-                            withAnimation {
-                                scrollView.scrollTo(2, anchor: .center)
-                            }
-                        }
-                    Text("Page 4")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.yellow)
-                        .tag(3)
-                        .onAppear{
-                            withAnimation {
-                                scrollView.scrollTo(3, anchor: .center)
-                            }
-                        }
-                    Text("Page 5")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.orange)
-                        .tag(4)
-                        .onAppear{
-                            withAnimation {
-                                scrollView.scrollTo(4, anchor: .center)
-                            }
-                        }
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            }
-            
+        PagerView(index: $selection, endIndex: 3) {
+            Color.blue
+            Color.red
+            Color.yellow
         }
     }
 }

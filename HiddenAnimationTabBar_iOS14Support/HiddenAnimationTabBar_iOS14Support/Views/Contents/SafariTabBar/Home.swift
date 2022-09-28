@@ -29,6 +29,7 @@ struct Home: View {
             }
             .coordinateSpace(name: "TabScroll")
             .p("\(viewModel.offset)")
+            .previewP("\(viewModel.offset)")
             
             BottomBar()
                 .environmentObject(viewModel)
