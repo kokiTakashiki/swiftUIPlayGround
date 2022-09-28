@@ -39,4 +39,11 @@ extension View {
         print(string)
         return self
     }
+    func previewP(_ string: String, color: Color = .gray) -> some View {
+        overlay(
+            Text(string)
+                .foregroundColor(color)
+                .offset(x: -50, y: 0)
+        )
+    }
 }

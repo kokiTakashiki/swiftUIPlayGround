@@ -15,6 +15,9 @@
 		9A55CEF328CCC4E900E4668F /* InfiniteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A55CEF228CCC4E900E4668F /* InfiniteList.swift */; };
 		9A55CEF528CCD19C00E4668F /* ObservableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A55CEF428CCD19C00E4668F /* ObservableScrollView.swift */; };
 		9A66C38928CB9B7000C0428E /* HideableTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A66C38828CB9B7000C0428E /* HideableTabBarView.swift */; };
+		9A82C70228D0023A00F75DA7 /* SafariTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A82C70128D0023A00F75DA7 /* SafariTabBar.swift */; };
+		9A82C70528D0025900F75DA7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A82C70428D0025900F75DA7 /* Home.swift */; };
+		9A82C70728D0084D00F75DA7 /* BottomBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A82C70628D0084D00F75DA7 /* BottomBarViewModel.swift */; };
 		9AB4F7DA28CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4F7D928CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift */; };
 		9AB4F7DC28CB61B7003BDB56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB4F7DB28CB61B7003BDB56 /* ContentView.swift */; };
 		9AB4F7DE28CB61B8003BDB56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AB4F7DD28CB61B8003BDB56 /* Assets.xcassets */; };
@@ -57,6 +60,9 @@
 		9A55CEF228CCC4E900E4668F /* InfiniteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteList.swift; sourceTree = "<group>"; };
 		9A55CEF428CCD19C00E4668F /* ObservableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableScrollView.swift; sourceTree = "<group>"; };
 		9A66C38828CB9B7000C0428E /* HideableTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideableTabBarView.swift; sourceTree = "<group>"; };
+		9A82C70128D0023A00F75DA7 /* SafariTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariTabBar.swift; sourceTree = "<group>"; };
+		9A82C70428D0025900F75DA7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9A82C70628D0084D00F75DA7 /* BottomBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarViewModel.swift; sourceTree = "<group>"; };
 		9AB4F7D628CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14Support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiddenAnimationTabBar_iOS14Support.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AB4F7D928CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenAnimationTabBar_iOS14SupportApp.swift; sourceTree = "<group>"; };
 		9AB4F7DB28CB61B7003BDB56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			children = (
 				9A55CEEF28CCC49C00E4668F /* InifiniteListTest.swift */,
 				9A55CEE528CBB49400E4668F /* MatrixView.swift */,
+				9A82C70328D0024B00F75DA7 /* SafariTabBar */,
 			);
 			path = Contents;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				9A55CEEC28CCC38E00E4668F /* ListViewModel.swift */,
+				9A82C70628D0084D00F75DA7 /* BottomBarViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +145,15 @@
 				9A55CEF428CCD19C00E4668F /* ObservableScrollView.swift */,
 			);
 			path = Parts;
+			sourceTree = "<group>";
+		};
+		9A82C70328D0024B00F75DA7 /* SafariTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9A82C70128D0023A00F75DA7 /* SafariTabBar.swift */,
+				9A82C70428D0025900F75DA7 /* Home.swift */,
+			);
+			path = SafariTabBar;
 			sourceTree = "<group>";
 		};
 		9AB4F7CD28CB61B7003BDB56 = {
@@ -391,12 +408,15 @@
 				9AB4F81028CB64A6003BDB56 /* View+isHidden.swift in Sources */,
 				9AB4F81628CB64F9003BDB56 /* CustomTabViewPresentModeSelectKey.swift in Sources */,
 				9AB4F80A28CB6416003BDB56 /* TabBarItem.swift in Sources */,
+				9A82C70528D0025900F75DA7 /* Home.swift in Sources */,
 				9AB4F80D28CB6457003BDB56 /* TabBarItemsPreferenceKey.swift in Sources */,
 				9A55CEE828CCB89000E4668F /* ContentViewTab.swift in Sources */,
 				9A55CEF528CCD19C00E4668F /* ObservableScrollView.swift in Sources */,
+				9A82C70728D0084D00F75DA7 /* BottomBarViewModel.swift in Sources */,
 				9AB4F7DA28CB61B7003BDB56 /* HiddenAnimationTabBar_iOS14SupportApp.swift in Sources */,
 				9A66C38928CB9B7000C0428E /* HideableTabBarView.swift in Sources */,
 				9A55CEF028CCC49C00E4668F /* InifiniteListTest.swift in Sources */,
+				9A82C70228D0023A00F75DA7 /* SafariTabBar.swift in Sources */,
 				9AB4F80728CB63B7003BDB56 /* ContentViewTabBarContainerView.swift in Sources */,
 				9A55CEF328CCC4E900E4668F /* InfiniteList.swift in Sources */,
 			);
