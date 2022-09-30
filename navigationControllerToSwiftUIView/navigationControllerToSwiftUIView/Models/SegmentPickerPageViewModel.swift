@@ -12,7 +12,7 @@ final class SegmentPickerPageViewModel: ObservableObject {
     var state: MyState
     var anyCancellables: [AnyCancellable] = []
     init() {
-        state = MyState(selectionIndex: .one)
+        state = MyState(selectionIndex: .one, swipeable: false)
         state.objectWillChange
             .sink { [weak self] _ in
                 self?.objectWillChange.send()
@@ -24,12 +24,15 @@ final class SegmentPickerPageViewModel: ObservableObject {
 extension SegmentPickerPageViewModel {
     final class MyState: ObservableObject {
         @Published var selectionIndex: PageIndex
-        init(selectionIndex:PageIndex) {
+        @Published var swipeable: Bool
+        init(selectionIndex: PageIndex, swipeable: Bool) {
             self.selectionIndex = selectionIndex
+            self.swipeable = swipeable
         }
     }
     
     func changeState(new: MyState) {
         state.selectionIndex = new.selectionIndex
+        state.swipeable = new.swipeable
     }
 }
