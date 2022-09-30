@@ -21,11 +21,11 @@ struct PageView: View {
             case .three:
                 return PageThreeViewController()
             case .four:
-                return PageOneViewController()
+                return PageFourViewController()
             case .five:
-                return PageTwoViewController()
+                return PageFiveViewController()
             case .six:
-                return PageThreeViewController()
+                return PageSixViewController()
             }
         })
         //.frame(minWidth: .infinity, maxHeight: .infinity)

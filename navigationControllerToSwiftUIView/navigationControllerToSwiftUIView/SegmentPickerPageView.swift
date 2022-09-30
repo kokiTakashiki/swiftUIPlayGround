@@ -23,13 +23,32 @@ struct SegmentPickerPageView: View {
             VStack(spacing: 5) {
                 SegmentedPickerExample(index: PageIndex.allCases.map { $0 })
                     .environmentObject(model)
-//                Picker("", selection: $selectionIndex) {
-//                    Text("Page1").tag(PageIndex.one)
-//                    Text("Page2").tag(PageIndex.two)
-//                    Text("Page3").tag(PageIndex.three)
-//                }.pickerStyle(SegmentedPickerStyle())
                 
-                TabView(selection: $model.state.selectionIndex) {
+//                TabView(selection: $model.state.selectionIndex) {
+//                    PageView(index: .one,
+//                             config: config)
+//                    PageView(index: .two,
+//                             config: config)
+//                    PageView(index: .three,
+//                             config: config)
+//                    PageView(index: .four,
+//                             config: config)
+//                    PageView(index: .five,
+//                             config: config)
+//                    PageView(index: .six,
+//                             config: config)
+//                }
+//                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                PagerView(index: Binding(
+                    get: {
+                        model.state.selectionIndex.rawValue
+                    },
+                    set: {
+                        //model.state.selectionIndex = PageIndex(rawValue: $0) ?? .one
+                        let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one)
+                        model.changeState(new: new)
+                    }),
+                endIndex: 6) {
                     PageView(index: .one,
                              config: config)
                     PageView(index: .two,
@@ -42,38 +61,10 @@ struct SegmentPickerPageView: View {
                              config: config)
                     PageView(index: .six,
                              config: config)
-//                    PageOneView(id: 0, proxy: scrollView)
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                        .background(Color.green)
-//                        .tag(0)
-//                        .onAppear{
-//                            withAnimation {
-//                                scrollView.scrollTo(0, anchor: .center)
-//                            }
-//                        }
-//                    Text("Page 2")
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                        .background(Color.green)
-//                        .tag(1)
-//                        .onAppear{
-//                            withAnimation {
-//                                scrollView.scrollTo(1, anchor: .center)
-//                            }
-//                        }
-//                    Text("Page 3")
-//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                        .background(Color.blue)
-//                        .tag(2)
-//                        .onAppear{
-//                            withAnimation {
-//                                scrollView.scrollTo(2, anchor: .center)
-//                            }
-//                        }
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .onChange(of: model.state.selectionIndex) { index in
                     withAnimation {
-                        if #available(iOS 15.0, *) {
+                        if #available(iOS 15.4, *) {
                             scrollView.scrollTo(index.rawValue, anchor: .center)
                         } else {
                             if index == .five {
