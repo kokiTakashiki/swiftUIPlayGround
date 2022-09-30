@@ -50,17 +50,17 @@ struct SegmentPickerPageView: View {
                     }),
                 endIndex: 6) {
                     PageView(index: .one,
-                             config: config)
+                             config: config, model: model)
                     PageView(index: .two,
-                             config: config)
+                             config: config, model: model)
                     PageView(index: .three,
-                             config: config)
+                             config: config, model: model)
                     PageView(index: .four,
-                             config: config)
+                             config: config, model: model)
                     PageView(index: .five,
-                             config: config)
+                             config: config, model: model)
                     PageView(index: .six,
-                             config: config)
+                             config: config, model: model)
                 }
                 .onChange(of: model.state.selectionIndex) { index in
                     withAnimation {

@@ -23,7 +23,7 @@ final class SegmentPickerPageViewModel: ObservableObject {
 
 extension SegmentPickerPageViewModel {
     final class MyState: ObservableObject {
-        @Published var selectionIndex:PageIndex
+        @Published var selectionIndex: PageIndex
         init(selectionIndex:PageIndex) {
             self.selectionIndex = selectionIndex
         }
