@@ -13,6 +13,8 @@ class PageThreeViewController: UIViewController {
     private let titleLabel = UILabel()
     // ボタンのインスタンス生成
     private let button = UIButton()
+    
+    var viewModel: SegmentPickerPageViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +56,16 @@ class PageThreeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("📒PageThreeViewController viewWillAppear")
+        if viewModel?.state.selectionIndex == .three {
+            print("📒PageThreeViewController viewWillAppear")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("📒PageThreeViewController viewDidAppear")
+        if viewModel?.state.selectionIndex == .three {
+            print("📒PageThreeViewController viewDidAppear")
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

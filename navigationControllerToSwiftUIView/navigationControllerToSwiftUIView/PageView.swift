@@ -11,21 +11,34 @@ import UIKit
 struct PageView: View {
     var index: PageIndex
     let config: Configuration
+    let model: SegmentPickerPageViewModel
     var body: some View {
         GenericUIViewController(config: config, factory: {
             switch index {
             case .one:
-                return PageOneViewController()
+                let vc = PageOneViewController()
+                vc.viewModel = model
+                return vc
             case .two:
-                return PageTwoViewController()
+                let vc = PageTwoViewController()
+                vc.viewModel = model
+                return vc
             case .three:
-                return PageThreeViewController()
+                let vc = PageThreeViewController()
+                vc.viewModel = model
+                return vc
             case .four:
-                return PageFourViewController()
+                let vc = PageFourViewController()
+                vc.viewModel = model
+                return vc
             case .five:
-                return PageFiveViewController()
+                let vc = PageFiveViewController()
+                vc.viewModel = model
+                return vc
             case .six:
-                return PageSixViewController()
+                let vc = PageSixViewController()
+                vc.viewModel = model
+                return vc
             }
         })
         //.frame(minWidth: .infinity, maxHeight: .infinity)
@@ -38,10 +51,13 @@ struct GenericUIViewController<ViewControllerType: UIViewController>: UIViewCont
     let factory: () -> ViewControllerType
     
     func makeUIViewController(context: Context) -> ViewControllerType {
+        print("makeUIViewController")
         let viewController = factory()
         config.hostingController?.addChild(viewController)
         return viewController
     }
     
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        print("updateUIViewController")
+    }
 }

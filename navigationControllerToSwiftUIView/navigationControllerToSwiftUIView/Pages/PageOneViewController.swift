@@ -13,6 +13,8 @@ class PageOneViewController: UIViewController {
     private let titleLabel = UILabel()
     // ボタンのインスタンス生成
     private let button = UIButton()
+    
+    var viewModel: SegmentPickerPageViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +56,16 @@ class PageOneViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("📙PageOneViewController viewWillAppear")
+        if viewModel.state.selectionIndex == .one {
+            print("📙PageOneViewController viewWillAppear")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("📙PageOneViewController viewDidAppear")
+        if viewModel.state.selectionIndex == .one {
+            print("📙PageOneViewController viewDidAppear")
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
