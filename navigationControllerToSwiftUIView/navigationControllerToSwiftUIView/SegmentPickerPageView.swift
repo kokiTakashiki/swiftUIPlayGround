@@ -45,13 +45,10 @@ struct SegmentPickerPageView: View {
                     },
                     set: {
                         //model.state.selectionIndex = PageIndex(rawValue: $0) ?? .one
-                        let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one, swipeable: false)
+                        let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one)
                         model.changeState(new: new)
-                        print("swipeable \(model.state.swipeable)")
                     }),
-                endIndex: 6,
-                swipeable: $model.state.swipeable
-                ) {
+                endIndex: 6) {
                     PageView(index: .one,
                              config: config, model: model)
                     PageView(index: .two,
