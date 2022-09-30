@@ -13,6 +13,7 @@ class PageOneViewController: UIViewController {
     private let titleLabel = UILabel()
     // ボタンのインスタンス生成
     private let button = UIButton()
+    var collectionView: UICollectionView!
     
     var viewModel: SegmentPickerPageViewModel!
 
@@ -52,6 +53,26 @@ class PageOneViewController: UIViewController {
         
         // Viewにボタンを追加
         self.view.addSubview(button)
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(
+            width: self.view.frame.width / 5,
+            height: self.view.frame.width / 5
+        )
+        flowLayout.minimumInteritemSpacing = self.view.bounds.height
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.scrollDirection = .horizontal
+        
+        collectionView = UICollectionView(
+            frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/4) ,
+            collectionViewLayout:flowLayout
+        )
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.dataSource = self
+        self.view.addSubview(collectionView)
+    }
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,4 +108,21 @@ class PageOneViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
+}
+
+extension PageOneViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return 100
+        }
+
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+            if(indexPath.row % 2 == 0){
+                cell.backgroundColor = .red
+            }else{
+                cell.backgroundColor = .blue
+            }
+
+            return cell
+        }
 }
