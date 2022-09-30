@@ -18,11 +18,6 @@ Content: View {
     private let content: Content
     private let endIndex: Int
     
-    //
-    // Environment
-    //
-    @Environment(\.isAllowSwipe) var isAllowSwipe: Bool
-    
     init(index: Binding<Int>,
          endIndex: Int,
          @ViewBuilder content: @escaping () -> Content
@@ -49,7 +44,11 @@ Content: View {
             }
             .gesture(DragGesture()
                 .onChanged({ value in
-                    self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
+                    if abs(value.translation.width) > abs(value.translation.height) && abs(value.translation.width) > 30 {
+                        withAnimation {
+                            self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
+                        }
+                    }
                 })
                 .onEnded({ value in
                     let scrollThreshold = geometry.size.width / 2
