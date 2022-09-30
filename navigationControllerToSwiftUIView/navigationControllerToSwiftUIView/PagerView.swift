@@ -12,6 +12,7 @@ where
 Content: View {
     
     @Binding private var index: Int
+    @Binding private var swipeable: Bool
     @State private var offset: CGFloat = 0
     @State private var show: Bool = true
     private let content: Content
@@ -19,10 +20,12 @@ Content: View {
     
     init(index: Binding<Int>,
          endIndex: Int,
+         swipeable: Binding<Bool>,
          @ViewBuilder content: @escaping () -> Content
     ) {
         self.content = content()
         self._index = index
+        self._swipeable = swipeable
         self.endIndex = endIndex
     }
     
@@ -43,22 +46,25 @@ Content: View {
                     self.show = true
                 }
             }
-            .allowsHitTesting(true)
-            .blur(radius: show ? 0 : 1)
+            .blur(radius: show ? 0 : 2)
             .gesture(DragGesture()
                 .onChanged({ value in
-                    self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
+                    if swipeable {
+                        self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
+                    }
                 })
                 .onEnded({ value in
-                    let scrollThreshold = geometry.size.width / 2
-                    if value.predictedEndTranslation.width < -scrollThreshold {
-                        self.index = min(self.index + 1, endIndex - 1)
-                    } else if value.predictedEndTranslation.width > scrollThreshold {
-                        self.index = max(self.index - 1, 0)
-                    }
+                    if swipeable {
+                        let scrollThreshold = geometry.size.width / 2
+                        if value.predictedEndTranslation.width < -scrollThreshold {
+                            self.index = min(self.index + 1, endIndex - 1)
+                        } else if value.predictedEndTranslation.width > scrollThreshold {
+                            self.index = max(self.index - 1, 0)
+                        }
 
-                    withAnimation {
-                        self.offset = -geometry.size.width * CGFloat(self.index)
+                        withAnimation {
+                            self.offset = -geometry.size.width * CGFloat(self.index)
+                        }
                     }
                 })
             )

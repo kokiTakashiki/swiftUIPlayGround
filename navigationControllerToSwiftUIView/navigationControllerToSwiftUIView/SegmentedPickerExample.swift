@@ -25,7 +25,7 @@ struct SegmentedPickerExample: View {
                             },
                             set: {
                                 //model.state.selectionIndex = PageIndex(rawValue: $0) ?? .one
-                                let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one)
+                                let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one, swipeable: false)
                                 model.changeState(new: new)
                             }),
                         selectionAlignment: .bottom,
