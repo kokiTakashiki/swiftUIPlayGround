@@ -52,6 +52,21 @@ class PageThreeViewController: UIViewController {
         self.view.addSubview(button)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("📒PageThreeViewController viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("📒PageThreeViewController viewDidAppear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("📒PageThreeViewController viewDidDisappear")
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         button.center = CGPoint(x: self.view.frame.size.width  / 2,

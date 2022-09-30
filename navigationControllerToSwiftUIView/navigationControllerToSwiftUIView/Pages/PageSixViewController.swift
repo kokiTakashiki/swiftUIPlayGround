@@ -1,14 +1,14 @@
 //
-//  PageOneViewController.swift
+//  PageSixViewController.swift
 //  navigationControllerToSwiftUIView
 //
-//  Created by 武田孝騎 on 2022/08/10.
+//  Created by 武田孝騎 on 2022/09/29.
 //
 
 import UIKit
 
-class PageOneViewController: UIViewController {
-    
+class PageSixViewController: UIViewController {
+
     // 画面のタイトル用ラベル
     private let titleLabel = UILabel()
     // ボタンのインスタンス生成
@@ -16,7 +16,7 @@ class PageOneViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .orange
+        self.view.backgroundColor = .systemPink
         
         // スクリーンの横縦幅
         let screenWidth:CGFloat = self.view.frame.width
@@ -24,7 +24,7 @@ class PageOneViewController: UIViewController {
         
         titleLabel.frame = CGRect(x:0, y:0,
                                   width:screenWidth/2, height:50)
-        titleLabel.text = PageIndex.one.name
+        titleLabel.text = PageIndex.six.name
         self.view.addSubview(titleLabel)
         
         // ボタンの位置とサイズを設定
@@ -54,17 +54,17 @@ class PageOneViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("📙PageOneViewController viewWillAppear")
+        print("🎀PageSixViewController viewWillAppear")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("📙PageOneViewController viewDidAppear")
+        print("🎀PageSixViewController viewDidAppear")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("📙PageOneViewController viewDidDisappear")
+        print("🎀PageSixViewController viewDidDisappear")
     }
     
     override func viewWillLayoutSubviews() {
@@ -77,8 +77,10 @@ class PageOneViewController: UIViewController {
 
     @objc func buttonTapped(sender : Any) {
         let viewController = DetailViewController()
-        viewController.labelString = PageIndex.one.name
+        viewController.labelString = PageIndex.six.name
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-
 }
+
+
+

@@ -52,6 +52,21 @@ class PageTwoViewController: UIViewController {
         self.view.addSubview(button)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("📘PageTwoViewController viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("📘PageTwoViewController viewDidAppear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("📘PageTwoViewController viewDidDisappear")
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         button.center = CGPoint(x: self.view.frame.size.width  / 2,
