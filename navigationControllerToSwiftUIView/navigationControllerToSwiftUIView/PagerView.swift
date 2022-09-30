@@ -18,6 +18,11 @@ Content: View {
     private let content: Content
     private let endIndex: Int
     
+    //
+    // Environment
+    //
+    @Environment(\.isAllowSwipe) var isAllowSwipe: Bool
+    
     init(index: Binding<Int>,
          endIndex: Int,
          swipeable: Binding<Bool>,
