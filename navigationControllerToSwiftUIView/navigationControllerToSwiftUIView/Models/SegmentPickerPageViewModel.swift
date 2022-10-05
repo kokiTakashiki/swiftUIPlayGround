@@ -24,6 +24,7 @@ final class SegmentPickerPageViewModel: ObservableObject {
 extension SegmentPickerPageViewModel {
     final class MyState: ObservableObject {
         @Published var selectionIndex: PageIndex
+        @Published var isDrag: Bool = true
         init(selectionIndex: PageIndex) {
             self.selectionIndex = selectionIndex
         }

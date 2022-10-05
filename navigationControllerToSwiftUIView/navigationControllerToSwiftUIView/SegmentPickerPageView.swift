@@ -59,8 +59,12 @@ struct SegmentPickerPageView: View {
                              config: config, model: model)
                     PageView(index: .five,
                              config: config, model: model)
-                    PageView(index: .six,
-                             config: config, model: model)
+                    YokoItemView().environmentObject(model)
+                }
+                .stopPaging(is: model.state.isDrag)
+                .onTapGesture {
+                    model.state.isDrag = true
+                    print("true")
                 }
                 .onChange(of: model.state.selectionIndex) { index in
                     withAnimation {
@@ -78,6 +82,12 @@ struct SegmentPickerPageView: View {
                 }
             }
         }
+    }
+}
+
+fileprivate extension View {
+    func stopPaging(is: Bool) -> some View {
+        environment(\.stopPaging, `is`)
     }
 }
 
