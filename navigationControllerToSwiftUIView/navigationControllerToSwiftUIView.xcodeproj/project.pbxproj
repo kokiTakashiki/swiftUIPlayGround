@@ -33,6 +33,9 @@
 		9AEC1DFF28E54E1000A93DDC /* PageFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1DFE28E54E1000A93DDC /* PageFiveViewController.swift */; };
 		9AEC1E0128E54EBA00A93DDC /* PageSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E0028E54EBA00A93DDC /* PageSixViewController.swift */; };
 		9AEC1E0328E54FD800A93DDC /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E0228E54FD800A93DDC /* PagerView.swift */; };
+		9AEC1E3F28EBEDE500A93DDC /* YokoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E3E28EBEDE500A93DDC /* YokoItemView.swift */; };
+		9AEC1E4228EBEF4E00A93DDC /* StopPagingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E4128EBEF4E00A93DDC /* StopPagingKey.swift */; };
+		9AEC1E4528EBF3EF00A93DDC /* DragGestureViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E4428EBF3EF00A93DDC /* DragGestureViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		9AEC1DFE28E54E1000A93DDC /* PageFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFiveViewController.swift; sourceTree = "<group>"; };
 		9AEC1E0028E54EBA00A93DDC /* PageSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSixViewController.swift; sourceTree = "<group>"; };
 		9AEC1E0228E54FD800A93DDC /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
+		9AEC1E3E28EBEDE500A93DDC /* YokoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YokoItemView.swift; sourceTree = "<group>"; };
+		9AEC1E4128EBEF4E00A93DDC /* StopPagingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPagingKey.swift; sourceTree = "<group>"; };
+		9AEC1E4428EBF3EF00A93DDC /* DragGestureViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,8 @@
 		9A3EBA4128A37D3000D24E74 /* navigationControllerToSwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				9AEC1E4328EBF3D900A93DDC /* Modifier */,
+				9AEC1E4028EBEF3700A93DDC /* Key */,
 				9A3EBA4228A37D3000D24E74 /* AppDelegate.swift */,
 				9A3EBA4428A37D3000D24E74 /* SceneDelegate.swift */,
 				9A3EBA7728A3800A00D24E74 /* SegmentPickerPageView.swift */,
@@ -198,8 +206,25 @@
 				9AEC1DFE28E54E1000A93DDC /* PageFiveViewController.swift */,
 				9AEC1E0028E54EBA00A93DDC /* PageSixViewController.swift */,
 				9A3EBA8528A38D1D00D24E74 /* PageOneView.swift */,
+				9AEC1E3E28EBEDE500A93DDC /* YokoItemView.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		9AEC1E4028EBEF3700A93DDC /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				9AEC1E4128EBEF4E00A93DDC /* StopPagingKey.swift */,
+			);
+			path = Key;
+			sourceTree = "<group>";
+		};
+		9AEC1E4328EBF3D900A93DDC /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				9AEC1E4428EBF3EF00A93DDC /* DragGestureViewModifier.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +361,7 @@
 				9A3EBA7628A37E2700D24E74 /* PageOneViewController.swift in Sources */,
 				9A3EBA8428A3815400D24E74 /* HorizontalAlignment.swift in Sources */,
 				9A3EBA4728A37D3000D24E74 /* ViewController.swift in Sources */,
+				9AEC1E4528EBF3EF00A93DDC /* DragGestureViewModifier.swift in Sources */,
 				9AEC1DFF28E54E1000A93DDC /* PageFiveViewController.swift in Sources */,
 				9A3EBA7328A37DFF00D24E74 /* PageView.swift in Sources */,
 				9A3EBA8628A38D1D00D24E74 /* PageOneView.swift in Sources */,
@@ -347,6 +373,8 @@
 				9A3EBA7C28A380B500D24E74 /* PageThreeViewController.swift in Sources */,
 				9A17795A28C050050023E4A0 /* SegmentPickerPageViewModel.swift in Sources */,
 				9A3EBA4528A37D3000D24E74 /* SceneDelegate.swift in Sources */,
+				9AEC1E3F28EBEDE500A93DDC /* YokoItemView.swift in Sources */,
+				9AEC1E4228EBEF4E00A93DDC /* StopPagingKey.swift in Sources */,
 				9AEC1DFD28E47DF300A93DDC /* PageFourViewController.swift in Sources */,
 				9A3EBA7A28A3809900D24E74 /* PageTwoViewController.swift in Sources */,
 				9A17790228A92D050023E4A0 /* DetailViewController.swift in Sources */,
