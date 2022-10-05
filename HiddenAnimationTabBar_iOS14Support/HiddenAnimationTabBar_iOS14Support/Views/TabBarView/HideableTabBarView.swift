@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HideableTabBarView<Element, Content, TabItem>: View
-    where
-    Content: View,
-    TabItem: View {
+where
+Content: View,
+TabItem: View {
     
     //
     // Binding properties
