@@ -10,33 +10,39 @@ import UIKit
 
 struct PageView: View {
     var index: PageIndex
-    let config: Configuration
+    let config: SegmentPickerPageViewConfiguration
     let model: SegmentPickerPageViewModel
     var body: some View {
-        GenericUIViewController(config: config, factory: {
+        GenericUIViewController(factory: {
             switch index {
             case .one:
                 let vc = PageOneViewController()
                 vc.viewModel = model
+                config.hostingController?.addChild(vc)
                 return vc
             case .two:
                 let vc = PageTwoViewController()
+                config.hostingController?.addChild(vc)
                 vc.viewModel = model
                 return vc
             case .three:
                 let vc = PageThreeViewController()
+                config.hostingController?.addChild(vc)
                 vc.viewModel = model
                 return vc
             case .four:
                 let vc = PageFourViewController()
+                config.hostingController?.addChild(vc)
                 vc.viewModel = model
                 return vc
             case .five:
                 let vc = PageFiveViewController()
+                config.hostingController?.addChild(vc)
                 vc.viewModel = model
                 return vc
             case .six:
                 let vc = PageSixViewController()
+                config.hostingController?.addChild(vc)
                 vc.viewModel = model
                 return vc
             }
@@ -47,14 +53,11 @@ struct PageView: View {
 }
 
 struct GenericUIViewController<ViewControllerType: UIViewController>: UIViewControllerRepresentable {
-    let config: Configuration
     let factory: () -> ViewControllerType
     
     func makeUIViewController(context: Context) -> ViewControllerType {
         print("makeUIViewController")
-        let viewController = factory()
-        config.hostingController?.addChild(viewController)
-        return viewController
+        return factory()
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
