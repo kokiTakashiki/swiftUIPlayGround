@@ -36,6 +36,10 @@
 		9AEC1E3F28EBEDE500A93DDC /* YokoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E3E28EBEDE500A93DDC /* YokoItemView.swift */; };
 		9AEC1E4228EBEF4E00A93DDC /* StopPagingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E4128EBEF4E00A93DDC /* StopPagingKey.swift */; };
 		9AEC1E4528EBF3EF00A93DDC /* DragGestureViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E4428EBF3EF00A93DDC /* DragGestureViewModifier.swift */; };
+		9AEC1E842902E2FC00A93DDC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E832902E2FC00A93DDC /* HomeViewController.swift */; };
+		9AEC1E862902E41400A93DDC /* ContentTabControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E852902E41400A93DDC /* ContentTabControlView.swift */; };
+		9AEC1E882902E47000A93DDC /* ContentTabControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E872902E47000A93DDC /* ContentTabControlViewModel.swift */; };
+		9AEC1E8A2902E4A000A93DDC /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC1E892902E4A000A93DDC /* TabBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		9AEC1E3E28EBEDE500A93DDC /* YokoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YokoItemView.swift; sourceTree = "<group>"; };
 		9AEC1E4128EBEF4E00A93DDC /* StopPagingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPagingKey.swift; sourceTree = "<group>"; };
 		9AEC1E4428EBF3EF00A93DDC /* DragGestureViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureViewModifier.swift; sourceTree = "<group>"; };
+		9AEC1E832902E2FC00A93DDC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9AEC1E852902E41400A93DDC /* ContentTabControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabControlView.swift; sourceTree = "<group>"; };
+		9AEC1E872902E47000A93DDC /* ContentTabControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabControlViewModel.swift; sourceTree = "<group>"; };
+		9AEC1E892902E4A000A93DDC /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9A17795928C050050023E4A0 /* SegmentPickerPageViewModel.swift */,
+				9AEC1E872902E47000A93DDC /* ContentTabControlViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,17 +170,15 @@
 				9AEC1E4028EBEF3700A93DDC /* Key */,
 				9A3EBA4228A37D3000D24E74 /* AppDelegate.swift */,
 				9A3EBA4428A37D3000D24E74 /* SceneDelegate.swift */,
-				9A3EBA7728A3800A00D24E74 /* SegmentPickerPageView.swift */,
-				9A3EBA7D28A3814300D24E74 /* SegmentedPickerExample.swift */,
-				9AEC1E0228E54FD800A93DDC /* PagerView.swift */,
-				9A3EBA7228A37DFF00D24E74 /* PageView.swift */,
-				9A1778FE28A4A0C80023E4A0 /* PageIndex.swift */,
-				9A3EBA7428A37E1400D24E74 /* Pages */,
-				9A17795828C04FE10023E4A0 /* Models */,
-				9A17790028A4A4AD0023E4A0 /* UIParts */,
 				9A3EBA4828A37D3000D24E74 /* Main.storyboard */,
 				9A3EBA4628A37D3000D24E74 /* ViewController.swift */,
+				9AEC1E852902E41400A93DDC /* ContentTabControlView.swift */,
+				9AEC1E892902E4A000A93DDC /* TabBarItem.swift */,
+				9AEC1E832902E2FC00A93DDC /* HomeViewController.swift */,
+				9AEC1E822902E2BB00A93DDC /* HomeParts */,
+				9A17790028A4A4AD0023E4A0 /* UIParts */,
 				9A17790128A92D050023E4A0 /* DetailViewController.swift */,
+				9A17795828C04FE10023E4A0 /* Models */,
 				9A3EBA4B28A37D3100D24E74 /* Assets.xcassets */,
 				9A3EBA4D28A37D3100D24E74 /* LaunchScreen.storyboard */,
 				9A3EBA5028A37D3100D24E74 /* Info.plist */,
@@ -225,6 +232,19 @@
 				9AEC1E4428EBF3EF00A93DDC /* DragGestureViewModifier.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		9AEC1E822902E2BB00A93DDC /* HomeParts */ = {
+			isa = PBXGroup;
+			children = (
+				9A3EBA7728A3800A00D24E74 /* SegmentPickerPageView.swift */,
+				9A3EBA7D28A3814300D24E74 /* SegmentedPickerExample.swift */,
+				9AEC1E0228E54FD800A93DDC /* PagerView.swift */,
+				9A3EBA7228A37DFF00D24E74 /* PageView.swift */,
+				9A1778FE28A4A0C80023E4A0 /* PageIndex.swift */,
+				9A3EBA7428A37E1400D24E74 /* Pages */,
+			);
+			path = HomeParts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,18 +389,22 @@
 				9A3EBA8028A3814A00D24E74 /* SegmentedPicker.swift in Sources */,
 				9AEC1E0328E54FD800A93DDC /* PagerView.swift in Sources */,
 				9A3EBA7E28A3814300D24E74 /* SegmentedPickerExample.swift in Sources */,
+				9AEC1E842902E2FC00A93DDC /* HomeViewController.swift in Sources */,
 				9A3EBA8228A3814F00D24E74 /* View+OptionalAlignment.swift in Sources */,
 				9A3EBA7C28A380B500D24E74 /* PageThreeViewController.swift in Sources */,
 				9A17795A28C050050023E4A0 /* SegmentPickerPageViewModel.swift in Sources */,
+				9AEC1E862902E41400A93DDC /* ContentTabControlView.swift in Sources */,
 				9A3EBA4528A37D3000D24E74 /* SceneDelegate.swift in Sources */,
 				9AEC1E3F28EBEDE500A93DDC /* YokoItemView.swift in Sources */,
 				9AEC1E4228EBEF4E00A93DDC /* StopPagingKey.swift in Sources */,
 				9AEC1DFD28E47DF300A93DDC /* PageFourViewController.swift in Sources */,
+				9AEC1E882902E47000A93DDC /* ContentTabControlViewModel.swift in Sources */,
 				9A3EBA7A28A3809900D24E74 /* PageTwoViewController.swift in Sources */,
 				9A17790228A92D050023E4A0 /* DetailViewController.swift in Sources */,
 				9A3EBA7828A3800A00D24E74 /* SegmentPickerPageView.swift in Sources */,
 				9AEC1E0128E54EBA00A93DDC /* PageSixViewController.swift in Sources */,
 				9A1778FF28A4A0C80023E4A0 /* PageIndex.swift in Sources */,
+				9AEC1E8A2902E4A000A93DDC /* TabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

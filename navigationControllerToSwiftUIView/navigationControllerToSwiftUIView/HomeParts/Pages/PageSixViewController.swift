@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PageSixViewController: UIViewController {
+class PageSixViewController: UITableViewController {
 
     // 画面のタイトル用ラベル
     private let titleLabel = UILabel()
@@ -15,6 +15,9 @@ class PageSixViewController: UIViewController {
     private let button = UIButton()
     
     var viewModel: SegmentPickerPageViewModel!
+
+    //テーブルに表示するセル配列
+    var items: [String] = ["Swift-Salaryman", "Manga-Salaryman", "Design-Salaryman"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

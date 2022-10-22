@@ -54,11 +54,11 @@ struct SegmentedPickerExample: View {
     }
 }
 
-//struct SegmentedPickerExample_Previews: PreviewProvider {
-//    //@State static var selectedInt = 0
-//    @State static var selectedIndex: PageIndex = .one
-//    static var previews: some View {
-//        SegmentedPickerExample(titles: ["Page1","Page2","Page3","Page4","page5","Page1","Page2"])
-//            .previewLayout(.fixed(width: 375, height: 54))
-//    }
-//}
+struct SegmentedPickerExample_Previews: PreviewProvider {
+    //@State static var selectedInt = 0
+    @State static var selectedIndex: PageIndex = .one
+    static var previews: some View {
+        SegmentedPickerExample(index: PageIndex.allCases)
+            .previewLayout(.fixed(width: 375, height: 54))
+    }
+}

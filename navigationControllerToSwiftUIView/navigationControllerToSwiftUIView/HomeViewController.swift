@@ -1,22 +1,29 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  navigationControllerToSwiftUIView
 //
-//  Created by 武田孝騎 on 2022/08/10.
+//  Created by 武田孝騎 on 2022/10/21.
 //
 
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
-    private let config = ContentTabControlViewConfiguration()
-    private let model = ContentTabControlViewModel()
+    private let config = SegmentPickerPageViewConfiguration()
+    private let model = SegmentPickerPageViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let viewController: UIHostingController = UIHostingController(rootView: ContentTabControlView(config: config).environmentObject(model))
+        title = "test navigation"
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .lightGray
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        
+        let viewController: UIHostingController = UIHostingController(rootView: SegmentPickerPageView(config: config).environmentObject(model))
         config.hostingController = viewController
         self.addChild(viewController)
         self.view.addSubview(viewController.view)
@@ -29,4 +36,3 @@ class ViewController: UIViewController {
         viewController.view.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
 }
-

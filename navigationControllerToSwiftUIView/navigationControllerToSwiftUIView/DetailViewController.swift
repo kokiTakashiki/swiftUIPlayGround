@@ -33,6 +33,24 @@ class DetailViewController: UIViewController {
                                   width:screenWidth/2, height:50)
         titleLabel.text = labelString
         self.view.addSubview(titleLabel)
+        
+        // UITextFieldを生成
+        let textField = UITextField()
+        textField.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
+        // プレースホルダを設定
+        textField.placeholder = "入力してください。"
+        // キーボードタイプを指定
+        textField.keyboardType = .default
+        // 枠線のスタイルを設定
+        textField.borderStyle = .roundedRect
+        // 改行ボタンの種類を設定
+        textField.returnKeyType = .done
+        // テキストを全消去するボタンを表示
+        textField.clearButtonMode = .always
+        // UITextFieldを追加
+        self.view.addSubview(textField)
+        // デリゲートを指定
+        textField.delegate = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -40,4 +58,8 @@ class DetailViewController: UIViewController {
         titleLabel.center = CGPoint(x: self.view.frame.size.width - 18,
                                     y: self.view.frame.size.height - 18)
     }
+}
+
+extension DetailViewController: UITextFieldDelegate {
+    
 }
