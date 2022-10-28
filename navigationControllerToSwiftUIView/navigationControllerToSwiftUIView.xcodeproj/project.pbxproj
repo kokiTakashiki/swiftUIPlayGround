@@ -127,6 +127,7 @@
 		9A17790028A4A4AD0023E4A0 /* UIParts */ = {
 			isa = PBXGroup;
 			children = (
+				9AEC1E0228E54FD800A93DDC /* PagerView.swift */,
 				9A3EBA7F28A3814A00D24E74 /* SegmentedPicker.swift */,
 				9A3EBA8128A3814F00D24E74 /* View+OptionalAlignment.swift */,
 				9A3EBA8328A3815400D24E74 /* HorizontalAlignment.swift */,
@@ -239,7 +240,6 @@
 			children = (
 				9A3EBA7728A3800A00D24E74 /* SegmentPickerPageView.swift */,
 				9A3EBA7D28A3814300D24E74 /* SegmentedPickerExample.swift */,
-				9AEC1E0228E54FD800A93DDC /* PagerView.swift */,
 				9A3EBA7228A37DFF00D24E74 /* PageView.swift */,
 				9A1778FE28A4A0C80023E4A0 /* PageIndex.swift */,
 				9A3EBA7428A37E1400D24E74 /* Pages */,

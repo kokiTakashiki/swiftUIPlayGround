@@ -79,7 +79,9 @@ struct ItemRow: View {
 }
 
 struct YokoItemView_Previews: PreviewProvider {
+    @State static var model = SegmentPickerPageViewModel()
     static var previews: some View {
         YokoItemView()
+            .environmentObject(model)
     }
 }

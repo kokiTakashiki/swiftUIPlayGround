@@ -18,11 +18,6 @@ Content: View {
     private let content: Content
     private let endIndex: Int
     
-    //
-    // Environment
-    //
-    @Environment(\.stopPaging) var stopPaging: Bool
-    
     init(index: Binding<Int>,
          endIndex: Int,
          @ViewBuilder content: @escaping () -> Content
@@ -39,6 +34,7 @@ Content: View {
                     content
                         .frame(width: geometry.size.width, height: geometry.size.height)
                 }
+                .highPriorityGesture(TapGesture())
             }
             .content.offset(x: self.offset)
             .frame(width: geometry.size.width, height: nil, alignment: .leading)
@@ -49,10 +45,7 @@ Content: View {
             }
             .gesture(DragGesture()
                 .onChanged({ value in
-                    if abs(value.translation.width) > abs(value.translation.height)
-                        && stopPaging
-                        //&& abs(value.translation.width) > 30
-                    {
+                    if abs(value.translation.width) > abs(value.translation.height) {
                         withAnimation {
                             self.offset = value.translation.width - geometry.size.width * CGFloat(self.index)
                         }
