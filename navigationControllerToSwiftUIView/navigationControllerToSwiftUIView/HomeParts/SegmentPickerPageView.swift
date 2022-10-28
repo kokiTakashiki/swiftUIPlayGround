@@ -24,31 +24,7 @@ struct SegmentPickerPageView: View {
                 SegmentedPickerExample(index: PageIndex.allCases.map { $0 })
                     .environmentObject(model)
                 
-                TabView(selection: $model.state.selectionIndex) {
-                    PageView(index: .one,
-                             config: config, model: model)
-                    PageView(index: .two,
-                             config: config, model: model)
-                    PageView(index: .three,
-                             config: config, model: model)
-                    PageView(index: .four,
-                             config: config, model: model)
-                    PageView(index: .five,
-                             config: config, model: model)
-                    PageView(index: .six,
-                             config: config, model: model)
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-//                PagerView(index: Binding(
-//                    get: {
-//                        model.state.selectionIndex.rawValue
-//                    },
-//                    set: {
-//                        //model.state.selectionIndex = PageIndex(rawValue: $0) ?? .one
-//                        let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one)
-//                        model.changeState(new: new)
-//                    }),
-//                endIndex: 6) {
+//                TabView(selection: $model.state.selectionIndex) {
 //                    PageView(index: .one,
 //                             config: config, model: model)
 //                    PageView(index: .two,
@@ -59,13 +35,35 @@ struct SegmentPickerPageView: View {
 //                             config: config, model: model)
 //                    PageView(index: .five,
 //                             config: config, model: model)
-//                    YokoItemView().environmentObject(model)
+//                    PageView(index: .six,
+//                             config: config, model: model)
 //                }
-//                .stopPaging(is: model.state.isDrag)
-//                .onTapGesture {
-//                    model.state.isDrag = true
-//                    print("true")
-//                }
+//                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                PagerView(index: Binding(
+                    get: {
+                        model.state.selectionIndex.rawValue
+                    },
+                    set: {
+                        //model.state.selectionIndex = PageIndex(rawValue: $0) ?? .one
+                        let new = SegmentPickerPageViewModel.MyState(selectionIndex: PageIndex(rawValue: $0) ?? .one)
+                        model.changeState(new: new)
+                    }),
+                endIndex: 6) {
+                    PageView(index: .one,
+                             config: config, model: model)
+                    PageView(index: .two,
+                             config: config, model: model)
+                    PageView(index: .three,
+                             config: config, model: model)
+                    PageView(index: .four,
+                             config: config, model: model)
+                    PageView(index: .five,
+                             config: config, model: model)
+                    YokoItemView()
+                        
+                        .environmentObject(model)
+                }
+                .stopPaging(is: model.state.isDrag)
                 .onChange(of: model.state.selectionIndex) { index in
                     withAnimation {
                         if #available(iOS 15.4, *) {

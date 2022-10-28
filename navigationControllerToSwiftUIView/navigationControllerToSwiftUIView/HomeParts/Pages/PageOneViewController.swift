@@ -54,6 +54,10 @@ class PageOneViewController: UIViewController {
         // Viewにボタンを追加
         self.view.addSubview(button)
         
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tappedObject(_:)))
+//        tapGesture.delegate = self
+//        button.addGestureRecognizer(tapGesture)
+        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(
             width: self.view.frame.width / 5,
@@ -108,19 +112,46 @@ class PageOneViewController: UIViewController {
 
 }
 
-extension PageOneViewController: UICollectionViewDataSource {
+extension UIButton {
+    open override func addTarget(
+        _ target: Any?,
+        action: Selector,
+        for controlEvents: UIControl.Event
+    ) {
+        super.addTarget(target, action: action, for: controlEvents)
+        let tapGesture = UITapGestureRecognizer(target: target, action: action)
+        guard let delegate = target as? any UIGestureRecognizerDelegate else { return }
+        tapGesture.delegate = delegate
+        self.addGestureRecognizer(tapGesture)
+        
+    }
+}
+
+extension PageOneViewController: UICollectionViewDataSource, UIGestureRecognizerDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return 100
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        if(indexPath.row % 2 == 0){
+            cell.backgroundColor = .red
+//            let tapGesture = UITapGestureRecognizer(target: cell, action: #selector(self.tappedObject(_:)))
+//            tapGesture.delegate = self
+//            cell.addGestureRecognizer(tapGesture)
+        }else{
+            cell.backgroundColor = .blue
         }
 
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-            if(indexPath.row % 2 == 0){
-                cell.backgroundColor = .red
-            }else{
-                cell.backgroundColor = .blue
-            }
-
-            return cell
-        }
+        return cell
+    }
+    
+//    @objc func tappedObject(_ sender: UIHoverGestureRecognizer) {
+//        if sender.state == .ended {
+//            print("タップ")
+//            let viewController = DetailViewController()
+//            viewController.labelString = PageIndex.one.name
+//            self.navigationController?.pushViewController(viewController, animated: true)
+//        }
+//    }
 }
