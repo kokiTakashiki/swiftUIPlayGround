@@ -60,7 +60,6 @@ struct SegmentPickerPageView: View {
                     PageView(index: .five,
                              config: config, model: model)
                     YokoItemView()
-                        
                         .environmentObject(model)
                 }
                 .stopPaging(is: model.state.isDrag)

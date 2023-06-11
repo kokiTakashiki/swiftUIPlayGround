@@ -18,6 +18,12 @@ struct SubContentView: View {
                 
                 button
                     .position(x: reader.size.width - 20, y: reader.size.height - 80)
+                    .shadow(color: .gray, radius: 3, x: 10, y: 10)
+                
+                Rectangle()
+                    .fill(Color.white)
+                    .shadow(color: .gray, radius: 3, x: 10, y: 10)
+                    .frame(height: 24)
             }
         }
 

@@ -34,7 +34,6 @@ Content: View {
                     content
                         .frame(width: geometry.size.width, height: geometry.size.height)
                 }
-                .highPriorityGesture(TapGesture())
             }
             .content.offset(x: self.offset)
             .frame(width: geometry.size.width, height: nil, alignment: .leading)

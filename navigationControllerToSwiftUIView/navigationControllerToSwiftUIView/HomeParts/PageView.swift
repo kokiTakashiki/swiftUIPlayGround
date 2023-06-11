@@ -47,7 +47,6 @@ struct PageView: View {
                 return vc
             }
         })
-        .gesture(TapGesture())
         //.frame(minWidth: .infinity, maxHeight: .infinity)
         .tag(index)
     }
